@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SELMAH Hernandes — Electronic Press Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C8963E;
+    --gold-light: #E8B86D;
+    --dark: #1A1410;
+    --dark-mid: #2C2218;
+    --cream: #F5EFE6;
+    --cream-dark: #E8DDD0;
+    --text: #3A2E24;
+    --text-light: #7A6A58;
+    --border: #C8963E44;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @media print {
+    body { background: white !important; }
+    .page-break { page-break-before: always; }
+    .no-print { display: none; }
+
+    /* Evita tagli dentro i blocchi */
+    .quote-block { page-break-inside: avoid; }
+    .stats-row { page-break-inside: avoid; }
+    .ensemble-grid { page-break-inside: avoid; }
+    .ensemble-item { page-break-inside: avoid; }
+    .disco-list { page-break-inside: avoid; }
+    .disco-list li { page-break-inside: avoid; }
+    .press-grid { page-break-inside: avoid; }
+    .press-item { page-break-inside: avoid; }
+    .contacts-grid { page-break-inside: avoid; }
+    .contact-box { page-break-inside: avoid; }
+    .formats-row { page-break-inside: avoid; }
+    .format-card { page-break-inside: avoid; }
+    .epk-footer { page-break-inside: avoid; }
+    h2 { page-break-after: avoid; }
+    .section-label { page-break-after: avoid; }
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, #C8963E18 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, #8B4513 0a%, transparent 55%);
+  }
+
+  .cover-ornament {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 40px;
+  }
+
+  .cover-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(72px, 14vw, 130px);
+    font-weight: 300;
+    color: var(--cream);
+    letter-spacing: 8px;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-name span {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .cover-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    color: #A09080;
+    text-transform: uppercase;
+    margin-top: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-divider {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(180deg, transparent, var(--gold), transparent);
+    margin: 40px auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-genre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--gold-light);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-year {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #6A5A4A;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* SECTIONS */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 70px 50px;
+  }
+
+  .section-alt {
+    background: var(--dark-mid);
+    color: var(--cream);
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .section-alt .inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 70px 50px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  h1, h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 30px;
+    color: var(--dark);
+  }
+
+  .section-alt h2 {
+    color: var(--cream);
+  }
+
+  .lead {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .section-alt .lead {
+    color: #C8B8A8;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--text-light);
+    margin-bottom: 16px;
+  }
+
+  .section-alt p {
+    color: #9A8878;
+  }
+
+  /* HIGHLIGHT QUOTE */
+  .quote-block {
+    border-left: 3px solid var(--gold);
+    padding: 20px 30px;
+    margin: 40px 0;
+    background: rgba(200, 150, 62, 0.06);
+  }
+
+  .quote-block p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .quote-block cite {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-top: 12px;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .section-alt .quote-block {
+    background: rgba(200, 150, 62, 0.08);
+    border-left-color: var(--gold);
+  }
+
+  .section-alt .quote-block p {
+    color: var(--cream-dark);
+  }
+
+  /* STATS ROW */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: 40px 0;
+    background: var(--border);
+  }
+
+  .stat {
+    background: var(--cream);
+    padding: 30px 24px;
+    text-align: center;
+  }
+
+  .section-alt .stat {
+    background: var(--dark);
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-top: 8px;
+    display: block;
+  }
+
+  .section-alt .stat-label {
+    color: #7A6A58;
+  }
+
+  /* ENSEMBLE TABLE */
+  .ensemble-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin: 30px 0;
+  }
+
+  .ensemble-item {
+    background: var(--dark);
+    padding: 24px 28px;
+  }
+
+  .ensemble-role {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .ensemble-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+
+  .ensemble-detail {
+    font-size: 12px;
+    color: #7A6A58;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* REPERTORIO */
+  .repertorio-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  .rep-col h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .rep-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .rep-list li {
+    font-size: 13px;
+    color: #9A8878;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(200,150,62,0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+  }
+
+  .rep-list li::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 6px;
+    flex-shrink: 0;
+  }
+
+  /* PRESS */
+  .press-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .press-item {
+    background: rgba(200,150,62,0.06);
+    border: 1px solid var(--border);
+    padding: 24px;
+  }
+
+  .press-source {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .press-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* DISCOGRAPHY */
+  .disco-list {
+    list-style: none;
+    margin: 24px 0;
+  }
+
+  .disco-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(200,150,62,0.15);
+    margin: 0;
+    gap: 20px;
+  }
+
+  .disco-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--cream);
+    font-style: italic;
+  }
+
+  .disco-year {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--gold);
+  }
+
+  .disco-note {
+    display: block;
+    font-size: 11px;
+    color: #7A6A58;
+    margin-top: 3px;
+    font-style: normal;
+  }
+
+  /* CONTACTS */
+  .contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+    margin-top: 30px;
+  }
+
+  .contact-box {
+    background: var(--cream);
+    padding: 30px 32px;
+  }
+
+  .contact-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .contact-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--dark);
+  }
+
+  /* FORMATS */
+  .formats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .format-card {
+    border: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+  }
+
+  .format-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .format-name {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--text);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .format-desc {
+    font-size: 12px;
+    color: var(--text-light);
+    margin: 0;
+  }
+
+  /* FOOTER */
+  .epk-footer {
+    background: var(--dark);
+    padding: 40px 50px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--gold);
+    letter-spacing: 6px;
+    margin-bottom: 8px;
+  }
+
+  .footer-sub {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #6A5A4A;
+    text-transform: uppercase;
+  }
+
+  /* SEPARATOR */
+  .sep {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 30px 0;
+  }
+
+  .sep-center {
+    margin: 30px auto;
+  }
+
+  @media (max-width: 700px) {
+    .section { padding: 50px 24px; }
+    .section-alt .inner { padding: 50px 24px; }
+    .stats-row, .press-grid, .contacts-grid, .formats-row,
+    .ensemble-grid, .repertorio-cols { grid-template-columns: 1fr; }
+    .cover-name { font-size: 56px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">Electronic Press Kit · 2025–2026</div>
+  <div class="cover-ornament"></div>
+  <div class="cover-name">SELM<span>AH</span></div>
+  <div class="cover-subtitle">Selma Hernandes</div>
+  <div class="cover-divider"></div>
+  <div class="cover-genre">Samba Rosa</div>
+  <div class="cover-year">Direzione Musicale: Luigi Rana</div>
+</div>
+
+<!-- HERO PHOTO -->
+<div style="width:100%; max-height:600px; overflow:hidden; position:relative;">
+  <img src="foto_selmah.jpg" alt="SELMAH Hernandes live" style="width:100%; object-fit:cover; object-position: center 20%; display:block; max-height:600px;">
+  <div style="position:absolute; bottom:0; left:0; right:0; padding:30px 50px; background:linear-gradient(transparent, rgba(26,20,16,0.85));">
+    <p style="color:#C8963E; font-size:11px; letter-spacing:4px; text-transform:uppercase; margin:0; font-family:'Montserrat',sans-serif;">Photo · Fondazione Valente, Molfetta 2026</p>
+  </div>
+</div>
+
+<!-- BIO -->
+<div class="section">
+  <div class="section-label">Profilo Artistico</div>
+  <h2>Una voce brasiliana<br>che appartiene al mondo</h2>
+
+  <p class="lead">SELMAH (Selma Hernandes) è una cantante e compositrice brasiliana cresciuta artisticamente tra due mondi: la vibrante scena musicale di São Paulo, dove ha mosso i primi passi, e l'Italia, dove vive dal 2002 — con quindici anni trascorsi in Umbria, la sua prima casa europea.</p>
+
+  <p>Nata ad Atibaia, São Paulo, da una famiglia dalle radici profonde e diverse — paterna spagnola, materna indigena e africana — Selma porta nel sangue la complessità e la ricchezza della vera anima brasiliana. In Italia consegue la laurea in Lingue e Letteratura Italiana presso l'Università per Stranieri di Perugia. Questa molteplicità di radici — brasiliana, spagnola, indigena, africana ed europea — è il cuore pulsante della sua musica.</p>
+
+  <p>Interprete di riferimento della Música Popular Brasileira (MPB) in Italia, SELMAH porta sul palco un repertorio che attraversa la bossa nova, il samba, la musica del nord-est brasiliano e le contaminazioni contemporanee, che si riflettono nelle sue composizioni inedite, in un racconto sonoro autentico e raffinato.</p>
+
+  <div class="quote-block">
+    <p>"Artista carismatica e sofisticata, ha costruito negli anni un percorso ricco di collaborazioni con protagonisti della musica d'autore e del jazz, consolidando un'identità stilistica che unisce eleganza, profondità interpretativa e raffinatezza timbrica."</p>
+    <cite>Fondazione Musicale Valente · Molfetta, 2026</cite>
+  </div>
+
+  <p>Il riconoscimento della critica italiana è consolidato: definita dalla stampa specializzata come "una delle voci più interessanti della musica carioca", ha costruito nel tempo una reputazione solida nei circuiti teatrali, jazz e world music italiani ed europei. Il suo <em>Remédios</em> — cover di Gabriella Ferri, prodotto e lanciato contemporaneamente all'uscita del film <em>Saturno Contro</em> di Ferzan Özpetek — è rimasto per quasi due anni tra i brani più trasmessi dalle radio italiane.</p>
+
+  <p>Dopo aver condiviso il palcoscenico con Ornella Vanoni al Parco della Musica di Roma e dopo il grande successo del tour con il grande Toquinho, nel 2024 è stata special guest del chitarrista Premio Grammy Latino Toninho Horta nel suo "World Wide Tour". La sua voce è da sempre molto amata nel mondo della musica elettronica internazionale: tra le collaborazioni più recenti, quella con i DJ olandesi René Ablaze e Jean Moiré per il singolo "Playa de Ibiza", entrato tra le 30 tracce più scaricate dai DJ europei.</p>
+
+  <div class="sep"></div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <span class="stat-number">20+</span>
+      <span class="stat-label">Anni di carriera</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">4</span>
+      <span class="stat-label">Uscite discografiche</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">IT · BR · EU</span>
+      <span class="stat-label">Mercati attivi</span>
+    </div>
+  </div>
+</div>
+
+<!-- LIVE -->
+<div class="section-alt">
+  <div class="inner">
+    <div class="section-label">Live Experience</div>
+    <h2>Palchi internazionali,<br>collaborazioni di prestigio</h2>
+
+    <p class="lead">SELMAH vanta un curriculum live di rilievo assoluto, con presenze sui palchi più importanti del circuito jazz e world music italiano e internazionale.</p>
+
+    <div class="quote-block">
+      <p>Ha condiviso il palco con Toquinho (tour italiano 2017), Toninho Horta, Guinga, Ornella Vanoni, Celso Fonseca, Gabriele Mirabassi, Renato Sellani, Luciano Biondini, Roberto Ottaviano — partecipando a Umbria Jazz, Parco della Musica, Villa Celimontana, FIFA World Cup a Piazza di Spagna, SESC Brasil, SESC Palladium, TV Rede Globo Brasil, Radio Rai 1, festival in Italia, Brasile, Spagna e Messico.</p>
+    </div>
+
+    <p>Nel 2016 firma un contratto con la major italiana Saifam Group e lancia il suo secondo album "Sou da Paz" su tutte le piattaforme mondiali, prodotto dal chitarrista premiato come miglior arrangiatore a Sanremo nel 2004, che vanta nel suo background diversi dischi d'oro e platino in Spagna, Asia e America e attualmente 2.633.865.517 ascolti streaming nel mercato asiatico per la versione elettronica del suo brano "Batte forte".</p>
+
+    <p>La sua musica è stata colonna sonora del "Festival Música do Estado do Amazonas", del "Festival Música Ciudad de Cancún" in Messico, ed è parte della colonna sonora del documentario Rai sulla Bossa Nova — portando il repertorio brasiliano in contesti internazionali di primo piano.</p>
+
+    <div class="formats-row">
+      <div class="format-card">
+        <span class="format-icon">II</span>
+        <div class="format-name">Duo / Trio</div>
+        <p class="format-desc">Formato acustico intimo per club, ristoranti 4/5★ ed eventi privati</p>
+      </div>
+      <div class="format-card">
+        <span class="format-icon">VI</span>
+        <div class="format-name">Sestetto</div>
+        <p class="format-desc">Formazione completa per teatri, festival e piazze</p>
+      </div>
+      <div class="format-card">
+        <span class="format-icon">♦</span>
+        <div class="format-name">Progetto AMBRA</div>
+        <p class="format-desc">Canzone italiana e brasiliana — Special Guest: Giuseppe Milici (armonica)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ENSEMBLE -->
+<div class="section" id="section-ensemble">
+  <div class="section-label">L'Ensemble</div>
+  <h2>Sestetto SELMAH<br>Hernandes</h2>
+  <p class="lead">Il progetto live nella sua formazione completa vede in scena sei musicisti di alto profilo, uniti da una lunga storia artistica comune.</p>
+
+  <div class="ensemble-grid">
+    <div class="ensemble-item">
+      <div class="ensemble-role">Voce & Percussioni</div>
+      <div class="ensemble-name">SELMAH Hernandes</div>
+      <p class="ensemble-detail">Selma Hernandes · Cantante, compositrice, interprete MPB</p>
+    </div>
+    <div class="ensemble-item">
+      <div class="ensemble-role">Chitarra & Direzione Musicale</div>
+      <div class="ensemble-name">Luigi Rana</div>
+      <p class="ensemble-detail">Produttore musicale · Vincitore Sanremo 2004 · Colonne sonore Disney · Arrangiatore internazionale</p>
+    </div>
+    <div class="ensemble-item">
+      <div class="ensemble-role">Armonica a Bocca (Special Guest)</div>
+      <div class="ensemble-name">Giuseppe Milici</div>
+      <p class="ensemble-detail">Armonica cromatica · Progetto AMBRA</p>
+    </div>
+    <div class="ensemble-item">
+      <div class="ensemble-role">Piano · Basso · Batteria</div>
+      <div class="ensemble-name">Trio Unissono</div>
+      <p class="ensemble-detail">Paolo Luiso (piano) · Filippo De Salvo (basso) · Saverio Petruzzelis (batteria)</p>
+    </div>
+  </div>
+</div>
+
+<!-- DISCOGRAFIA -->
+<div class="section-alt">
+  <div class="inner">
+    <div class="section-label">Discografia</div>
+    <h2>Opere pubblicate</h2>
+
+    <ul class="disco-list">
+      <li>
+        <div>
+          <span class="disco-title">Encontros</span>
+          <span class="disco-note">Album · Entropyca · Con Luigi Rana, Andrea Agostini, Leopoldo Calabria, Gianni Spolettini, Maurizio Picchiò · Produzione italiana</span>
+        </div>
+        <span class="disco-year">2006</span>
+      </li>
+      <li>
+        <div>
+          <span class="disco-title">Remédios</span>
+          <span class="disco-note">Singolo · Cover di Gabriella Ferri · Grande successo radiofonico nazionale · Prodotto e lanciato contemporaneamente all'uscita del film "Saturno Contro" (Ferzan Özpetek) · Tra i brani più trasmessi dalle radio italiane per quasi due anni</span>
+        </div>
+        <span class="disco-year">2008</span>
+      </li>
+      <li>
+        <div>
+          <span class="disco-title">Sou da Paz</span>
+          <span class="disco-note">Album · Saifam Group · Collaborazioni con musicisti di tre continenti · Disponibile su Spotify, Apple Music e tutte le principali piattaforme streaming</span>
+        </div>
+        <span class="disco-year">2016</span>
+      </li>
+      <li>
+        <div>
+          <span class="disco-title">Mio caffè</span>
+          <span class="disco-note">Nuovo album · In uscita 2026 · Canta in portoghese e in italiano · Produzione Luigi Rana · "Il caffè è il punto di incontro fra le due culture — il momento in cui mi sento completa, brasiliana e italiana insieme."</span>
+        </div>
+        <span class="disco-year">2026 ★</span>
+      </li>
+    </ul>
+
+    <p>Il repertorio abbraccia i grandi compositori brasiliani — Chico Buarque, Vinicius de Moraes, João Gilberto, Ary Barroso — fino ai contemporanei come Ivan Lins, Djavan e Caetano Veloso, con incursioni nella MPB più contaminata e nelle composizioni originali di SELMAH e Luigi Rana, cantate in portoghese e in italiano.</p>
+
+    <p>Oltre agli album e ai singoli ufficiali, i brani di SELMAH sono presenti in numerose compilation internazionali distribuite dalla Saifam Group, portando la sua musica in tutto il mondo.</p>
+  </div>
+</div>
+
+<!-- RASSEGNA STAMPA -->
+<div class="section" id="section-press">
+  <div class="section-label">Rassegna Stampa</div>
+  <h2>La critica italiana<br>ha scritto di lei</h2>
+
+  <div class="press-grid">
+    <div class="press-item">
+      <div class="press-source">Giornale di Sicilia · Palermo</div>
+      <p class="press-text">"Considerata dalla critica una delle voci più interessanti della musica carioca, la bellissima Selma Hernandes è molto conosciuta anche in Italia."</p>
+    </div>
+    <div class="press-item">
+      <div class="press-source">La Nazione · Perugia</div>
+      <p class="press-text">"Una voce morbida, un timbro caldo, un'abilità tecnica impressionante. Selma incarna l'anima del Brasil in maniera autentica e profonda."</p>
+    </div>
+    <div class="press-item">
+      <div class="press-source">Jornal da Paulista</div>
+      <p class="press-text">"Cantora brasileira conquista o público europeu — Selma Hernandes alcança grande sucesso em todas as rádios italianas."</p>
+    </div>
+    <div class="press-item">
+      <div class="press-source">Panorama · Festival</div>
+      <p class="press-text">"Tra gli incontri musicali più belli fatti in Italia, quello con Selma Hernandes: la voce più importante e pura della musica brasiliana portata in scena con maestria rara."</p>
+    </div>
+  </div>
+
+  <p style="font-size:12px; color: var(--text-light); margin-top: 10px;"><em>Rassegna stampa completa disponibile su richiesta.</em></p>
+</div>
+
+<!-- CONTATTI -->
+<div class="section-alt" id="section-contacts">
+  <div class="inner">
+    <div class="section-label">Booking & Contatti</div>
+    <h2>Disponibilità<br>e informazioni</h2>
+
+    <p class="lead">Per proposte di collaborazione, booking, festival, club e eventi privati in Italia, Europa e Brasile.</p>
+
+    <div class="contacts-grid">
+      <div class="contact-box">
+        <div class="contact-label">Email</div>
+        <div class="contact-value">selmahernandesofficial@gmail.com</div>
+      </div>
+      <div class="contact-box">
+        <div class="contact-label">Telefono Italia</div>
+        <div class="contact-value">(+39) 393 955 6141<br>(+39) 333 702 8704</div>
+      </div>
+      <div class="contact-box">
+        <div class="contact-label">Telefono Brasile</div>
+        <div class="contact-value">(+55 11) 991 885 120</div>
+      </div>
+      <div class="contact-box">
+        <div class="contact-label">Social</div>
+        <div class="contact-value" style="font-size:15px;">@selmahernandes<br><span style="font-size:13px; color: #7A6A58;">Instagram · Facebook · YouTube</span></div>
+      </div>
+    </div>
+
+    <div class="sep" style="margin-top: 40px;"></div>
+
+    <p style="font-size: 12px; color: #6A5A4A;">Rider tecnico, contratto e materiale stampa completo disponibili su richiesta. · Video promo disponibili su YouTube e Instagram.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="epk-footer">
+  <div class="footer-name">SELMAH</div>
+  <div class="footer-sub">Selma Hernandes · Musica Brasileira · EPK 2025–2026</div>
+</div>
+
+</body>
+</html>
