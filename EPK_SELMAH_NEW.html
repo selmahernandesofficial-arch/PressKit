@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SELMAH · Samba Rosa · Press Kit 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #E8D5B0;
+    --sand-light: #F5ECD8;
+    --sand-dark: #C4A97D;
+    --ocean: #2C4A52;
+    --ocean-mid: #3D6370;
+    --copper: #B8743A;
+    --copper-light: #D4956A;
+    --cream: #FAF6EE;
+    --text: #1A1410;
+    --text-mid: #3A2A18;
+    --text-light: #5C4A32;
+    --white: #FDFAF5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    background: var(--ocean);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 40px;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(184,116,58,0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184,116,58,0.10) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse at center, transparent 25%, black 100%);
+    -webkit-mask-image: radial-gradient(ellipse at center, transparent 25%, black 100%);
+  }
+
+  .cover-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-tag {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 8px;
+    color: var(--sand-dark);
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+
+  .cover-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(80px, 16vw, 150px);
+    font-weight: 400;
+    color: var(--sand-light);
+    letter-spacing: 12px;
+    line-height: 0.9;
+  }
+
+  .cover-name em {
+    color: var(--copper-light);
+    font-style: italic;
+  }
+
+  .cover-artist {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: var(--sand-dark);
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+
+  .cover-wave {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--copper-light), transparent);
+    margin: 40px auto;
+  }
+
+  .cover-show {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-style: italic;
+    color: var(--copper-light);
+    letter-spacing: 2px;
+  }
+
+  .cover-dir {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: var(--sand);
+    text-transform: uppercase;
+    margin-top: 48px;
+  }
+
+  /* ── PHOTO HERO ── */
+  .photo-hero {
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    display: block;
+  }
+
+  .photo-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+  }
+
+  /* ── PHOTO LIVE ── */
+  .photo-live {
+    width: 100%;
+    display: block;
+  }
+
+  .photo-live img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 70px 50px;
+    position: relative;
+  }
+
+  .section-dark {
+    background: var(--ocean);
+    position: relative;
+  }
+
+  .section-dark .inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 70px 50px;
+  }
+
+  .section-sand {
+    background: var(--sand-light);
+    position: relative;
+  }
+
+  .section-sand .inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 70px 50px;
+  }
+
+  /* ── LABELS ── */
+  .label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    color: var(--copper);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--copper), transparent);
+    opacity: 0.3;
+  }
+
+  .section-dark .label { color: var(--sand-dark); }
+  .section-dark .label::after { background: linear-gradient(90deg, var(--sand-dark), transparent); }
+  .section-sand .label { color: var(--ocean); }
+  .section-sand .label::after { background: linear-gradient(90deg, var(--ocean), transparent); }
+
+  /* ── TYPOGRAPHY ── */
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 28px;
+    color: var(--text);
+  }
+
+  .section-dark h2 { color: var(--sand-light); }
+  .section-sand h2 { color: var(--ocean); }
+
+  .lead {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--text-mid);
+    margin-bottom: 20px;
+  }
+
+  .section-dark .lead { color: var(--sand); }
+  .section-sand .lead { color: var(--ocean); }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.9;
+    color: var(--text-light);
+    margin-bottom: 16px;
+  }
+
+  .section-dark p { color: #C8B090; }
+  .section-sand p { color: var(--ocean-mid); }
+
+  strong {
+    font-weight: 600;
+    color: var(--text-mid);
+  }
+
+  .section-dark strong { color: var(--sand); }
+
+  em { font-style: italic; }
+
+  /* ── SHOW INFO ── */
+  .show-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin: 24px 0;
+    padding: 20px 0;
+    border-top: 1px solid rgba(184,116,58,0.2);
+    border-bottom: 1px solid rgba(184,116,58,0.2);
+  }
+
+  .show-info-item {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-mid);
+  }
+
+  .show-info-item span {
+    color: var(--copper);
+    font-weight: 500;
+    margin-right: 6px;
+  }
+
+  /* ── ENSEMBLE ── */
+  .ensemble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(184,116,58,0.2);
+    margin: 28px 0;
+  }
+
+  .ens-item {
+    background: var(--ocean);
+    padding: 28px 32px;
+  }
+
+  .ens-num {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: var(--copper-light);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .ens-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--sand-light);
+    margin-bottom: 6px;
+  }
+
+  .ens-role {
+    font-size: 13px;
+    font-weight: 400;
+    color: #C8B090;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ── VIDEO ── */
+  .video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    margin: 32px 0 20px;
+  }
+
+  .video-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+
+  /* ── SOCIAL BUTTONS ── */
+  .social-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #C8B090;
+    margin: 28px 0 16px;
+    letter-spacing: 1px;
+  }
+
+  .social-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border: 1px solid rgba(232,213,176,0.35);
+    color: var(--sand);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+  }
+
+  .social-btn:hover {
+    background: rgba(184,116,58,0.2);
+    border-color: var(--copper-light);
+    color: var(--copper-light);
+  }
+
+  .social-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  /* ── DISCO ── */
+  .disco { margin: 28px 0; }
+
+  .disco-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(44,74,82,0.15);
+    gap: 20px;
+  }
+
+  .disco-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--ocean);
+  }
+
+  .disco-note {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-top: 4px;
+  }
+
+  .disco-year {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--copper);
+    white-space: nowrap;
+  }
+
+  /* ── CONTACTS ── */
+  .contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(184,116,58,0.2);
+    margin-top: 32px;
+  }
+
+  .contact-box {
+    background: var(--white);
+    padding: 28px 32px;
+  }
+
+  .contact-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    color: var(--copper);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .contact-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .contact-value a {
+    color: var(--ocean);
+    text-decoration: none;
+  }
+
+  /* ── AWARDS ── */
+  .awards-list {
+    margin: 16px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .awards-list li {
+    font-size: 14px;
+    font-weight: 400;
+    color: #C8B090;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(184,116,58,0.12);
+    display: flex;
+    gap: 12px;
+    margin: 0;
+  }
+
+  .awards-list li::before {
+    content: '◆';
+    color: var(--copper-light);
+    font-size: 7px;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--ocean);
+    padding: 56px 50px;
+    text-align: center;
+  }
+
+  .footer-wave {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--copper-light), transparent);
+    margin: 0 auto 32px;
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--sand-light);
+    letter-spacing: 10px;
+    margin-bottom: 12px;
+  }
+
+  .footer-sub {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    color: var(--sand-dark);
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 680px) {
+    .section { padding: 50px 24px; }
+    .section-dark .inner,
+    .section-sand .inner { padding: 50px 24px; }
+    .photo-hero { height: 320px; }
+    .photo-live { height: 260px; }
+    .ensemble, .contacts { grid-template-columns: 1fr; }
+    .cover-name { font-size: 64px; letter-spacing: 6px; }
+    .social-row { flex-direction: column; }
+    h2 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-tag">Electronic Press Kit · 2026–2027</div>
+    <div class="cover-name">SELM<em>AH</em></div>
+    <div class="cover-artist">Selma Hernandes</div>
+    <div class="cover-wave"></div>
+    <div class="cover-show">Samba Rosa</div>
+    <div class="cover-dir">Direzione Musicale: Luigi Rana</div>
+  </div>
+</div>
+
+<!-- FOTO PROFILO -->
+<div class="photo-hero">
+  <img src="foto_selmah.jpg" alt="SELMAH Hernandes">
+</div>
+
+<!-- IL CONCERTO -->
+<div class="section">
+  <div class="label">Il Concerto</div>
+  <h2>Samba Rosa</h2>
+
+  <p class="lead">Samba Rosa è il progetto live che celebra lo storico legame musicale tra Italia e Brasile. Un incontro inaspettato fra la canzone italiana e la musica brasiliana, due mondi che si riconoscono e si completano sul palco. Attraverso la voce di SELMAH, bossa nova, samba e MPB si fondono in un'unica narrazione musicale bilingue, rivelando un dialogo culturale profondo e raffinato.</p>
+
+  <div class="show-info">
+    <div class="show-info-item"><span>Durata:</span>75 minuti</div>
+    <div class="show-info-item"><span>Line-up:</span>Sestetto (Full Band)</div>
+  </div>
+</div>
+
+<!-- ENSEMBLE -->
+<div class="section-dark">
+  <div class="inner">
+    <div class="label">L'Ensemble · Sestetto</div>
+    <h2>Sul palco</h2>
+
+    <div class="ensemble">
+      <div class="ens-item">
+        <span class="ens-num">01</span>
+        <div class="ens-name">SELMAH Hernandes</div>
+        <p class="ens-role">Voce e percussioni</p>
+      </div>
+      <div class="ens-item">
+        <span class="ens-num">02</span>
+        <div class="ens-name">Luigi Rana</div>
+        <p class="ens-role">Chitarra e Direzione · (Sanremo 2002 · Miglior Arrangiatore Sanremo 2004) · Produttore con oltre 3 miliardi di stream nel mercato asiatico</p>
+      </div>
+      <div class="ens-item">
+        <span class="ens-num">03</span>
+        <div class="ens-name">Giuseppe Milici</div>
+        <p class="ens-role">Armonica cromatica · Special Guest</p>
+      </div>
+      <div class="ens-item">
+        <span class="ens-num">04</span>
+        <div class="ens-name">Trio Unisono</div>
+        <p class="ens-role">Piano: Paolo Luiso · Basso e contrabbasso: Filippo De Salvo · Batteria: Saverio Petruzzelis</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO -->
+<div class="section-dark" style="background: #1A2E35;">
+  <div class="inner">
+    <div class="label">Video</div>
+    <h2>Guarda il video promo del concerto</h2>
+
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/32rDNh2MM6Y?rel=0&modestbranding=1"
+        title="SELMAH — Samba Rosa"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <p class="social-label">Per altri video visita le pagine dell'artista sui social:</p>
+    <div class="social-row">
+      <a href="https://www.instagram.com/reel/DXK9MrhjEUC/" target="_blank" rel="noopener" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram Reel
+      </a>
+      <a href="https://www.facebook.com/reel/1233516868863534/" target="_blank" rel="noopener" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook Reel
+      </a>
+      <a href="https://www.youtube.com/channel/UCRVi_CdBGIvAhRcyuLfs7tw" target="_blank" rel="noopener" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        YouTube
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILO ARTISTICO -->
+<div class="section">
+  <div class="label">Profilo Artistico</div>
+  <h2>SELMAH — Selma Hernandes</h2>
+
+  <p class="lead">SELMAH (Selma Hernandes) è un'interprete e compositrice bilingue con oltre 35 anni di carriera. Nata a São Paulo, Brasile e da sempre appassionata dell'Italia, unisce radici indigene, africane ed europee in un'identità stilistica sofisticata. Riconosciuta dalla critica come una delle voci più interessanti del panorama musicale, ha ottenuto grande successo radiofonico con il brano <em>Remédios</em>, uscito in contemporanea con il film <em>Saturno Contro</em> di Ferzan Özpetek.</p>
+</div>
+
+<!-- FOTO LIVE -->
+<div class="photo-live">
+  <img src="foto_live_hd.jpg" alt="SELMAH live sul palco">
+</div>
+
+<!-- LIVE & COLLABORAZIONI -->
+<div class="section-sand">
+  <div class="inner">
+    <div class="label">Live Experience & Collaborazioni</div>
+    <h2>Palchi e artisti</h2>
+
+    <p><strong>Palchi:</strong> Sala Sinopoli (Parco della Musica), Villa Celimontana, FIFA World Cup, SESC Brasil, Rete Globo di televisione - Brasil, Musicancún (Messico), fra tanti teatri.</p>
+
+    <p><strong>Ha collaborato con:</strong> Toquinho, Toninho Horta, Ornella Vanoni, Guinga, Orchestra Ouro Preto, fra altri.</p>
+
+    <p><strong>Awards:</strong> 1° posto FAN Sesc Porto Velho · Premio Pierluigi Galluzzi · Premio Sinfonia d'Autore</p>
+  </div>
+</div>
+
+<!-- DISCOGRAFIA -->
+<div class="section">
+  <div class="label">Discografia & Novità</div>
+  <h2>Opere pubblicate</h2>
+
+  <p class="lead"><em>A Voz do Rio</em> (2026, in uscita · prod. Luigi Rana) · <em>Sou da Paz</em> (2016 · Saifam Group) · <em>Remédios</em> (2008 · prod. Stefano Brizi) · <em>Encontros</em> (2006 · Enthropia) · fra tanti altri singoli.</p>
+</div>
+
+<!-- CONTATTI -->
+<div class="section-dark">
+  <div class="inner">
+    <div class="label">Contatti</div>
+    <h2>Disponibilità e informazioni</h2>
+
+    <div class="contacts">
+      <div class="contact-box">
+        <div class="contact-label">Email</div>
+        <div class="contact-value">selmahernandesofficial@gmail.com</div>
+      </div>
+      <div class="contact-box">
+        <div class="contact-label">Booking Italia</div>
+        <div class="contact-value">+39 393 955 6141<br>+39 333 702 8704</div>
+      </div>
+      <div class="contact-box">
+        <div class="contact-label">Booking Brasile</div>
+        <div class="contact-value">+55 11 991 885 120</div>
+      </div>
+      <div class="contact-box">
+        <div class="contact-label">Sito Ufficiale</div>
+        <div class="contact-value">
+          <a href="https://www.selmahernandes.it" target="_blank" style="color: var(--ocean); text-decoration: none;">www.selmahernandes.it</a>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size: 13px; color: #C8B090; margin-top: 28px; letter-spacing: 0.5px;">
+      Rassegna stampa aggiornata, rider tecnico e materiale stampa completo disponibili su richiesta.
+    </p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-wave"></div>
+  <div class="footer-name">SELMAH</div>
+  <div class="footer-sub">Selma Hernandes · Musica Brasileira · EPK 2026–2027</div>
+</div>
+
+</body>
+</html>
