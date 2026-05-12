@@ -92,12 +92,12 @@
 
   .show-name {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(48px, 6vw, 80px);
+    font-size: clamp(36px, 5vw, 60px);
     font-weight: 700;
     color: var(--sand-light);
     line-height: 0.95;
     letter-spacing: -1px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
 
   .show-name em {
@@ -106,17 +106,17 @@
   }
 
   .artists-line {
-    font-size: 14px;
+    font-size: 22px;
     font-weight: 500;
-    letter-spacing: 3px;
-    color: var(--sand-dark);
-    margin-bottom: 6px;
+    letter-spacing: 4px;
+    color: var(--sand-light);
+    margin-bottom: 8px;
     text-transform: uppercase;
   }
 
   .feat-line {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
     letter-spacing: 2px;
     color: var(--copper-light);
     text-transform: uppercase;
@@ -283,7 +283,7 @@
   }
 
   h2 em { color: var(--copper); font-style: italic; }
-  .section-dark h2 { color: var(--sand-light); }
+  .section-dark h2 { color: var(--white); }
   .section-dark h2 em { color: var(--copper-light); }
   .section-sand h2 { color: var(--ocean); }
 
@@ -528,9 +528,9 @@
       <span class="genre-pill">World Music</span>
     </div>
 
-    <div class="show-name">Samba<br><em>Rosa</em></div>
-    <div class="artists-line">SELMAH Hernandes</div>
-    <div class="feat-line">feat. Giuseppe Milici · armonica cromatica</div>
+    <div class="show-name">Samba <em>Rosa</em></div>
+    <div class="artists-line">SELMAH</div>
+    <div class="feat-line">Special Guest: l'armonicista <span style="color: var(--sand-light);">Giuseppe Milici</span></div>
 
     <div class="specs">
       <div class="spec-item">
@@ -562,6 +562,14 @@
         <iframe
           src="https://www.youtube-nocookie.com/embed/32rDNh2MM6Y?rel=0&modestbranding=1"
           title="SELMAH — Samba Rosa"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="hero-video-wrap" style="margin-top: 14px;">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/iQeNbM-2mYo?rel=0&modestbranding=1"
+          title="SELMAH — Caminho das Águas"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
         </iframe>
@@ -603,12 +611,13 @@
       <div class="ens-item">
         <span class="ens-role">Chitarra & Direzione Musicale</span>
         <div class="ens-name">Luigi Rana</div>
-        <p class="ens-detail">Miglior Arrangiatore Sanremo 2004 · Sanremo 2002 con le Lollipop (Warner) · Colonne sonore Disney · 3+ miliardi di stream nel mercato asiatico</p>
+        <p class="ens-detail">Miglior Arrangiatore Sanremo 2004 per l'artista Mario Rosini · Sanremo 2002 (Warner) · Colonne sonore Disney · 3+ miliardi di stream nel mercato asiatico</p>
       </div>
       <div class="ens-item">
-        <span class="ens-role">Piano · Basso e Contrabbasso · Batteria</span>
+        <span class="ens-role">Piano · Basso/CTRbass · Batteria</span>
         <div class="ens-name">Trio Unisono</div>
-        <p class="ens-detail">Piano · Basso e contrabbasso · Batteria</p>
+        <p class="ens-detail">Ensemble d'eccellenza al fianco di grandi nomi della musica come Tony Esposito, Antonella Ruggiero e altri.</p>
+        <p class="ens-detail" style="margin-top:8px; color:var(--copper-light); font-style:italic;">Unisono Associazione Culturale e Musicale</p>
       </div>
     </div>
 
@@ -637,7 +646,7 @@
         <p class="inline-list">1° posto FAN Sesc, Porto Velho · Premio Pierluigi Galluzzi, Polignano a Mare · Premio Sinfonia d'Autore, Maiori · Colonna sonora documentario RAI sulla Bossa Nova, 2008</p>
 
         <div class="label" style="font-size:9px; margin-top:20px; margin-bottom:12px;">Collaborazioni</div>
-        <p class="inline-list">Toquinho · Toninho Horta · Ornella Vanoni · Guinga · Celso Fonseca · Renato Sellani · Roberto Ottaviano · Orchestra Ouro Preto · Daniele Scannapieco, fra tanti altri grandi musicisti</p>
+        <p class="inline-list">Toquinho · Toninho Horta · Ornella Vanoni · Guinga · Celso Fonseca · Renato Sellani · Gianluca Littera · Giuseppe Bassi · Vana Gierig · Roberto Ottaviano · Orchestra Ouro Preto · Daniele Scannapieco, fra tanti altri grandi musicisti</p>
 
         <div class="label" style="font-size:9px; margin-top:20px; margin-bottom:12px;">Discografia</div>
         <p class="inline-list"><em>A Voz do Rio</em> (2026, in uscita · prod. Luigi Rana) · <em>Sou da Paz</em> (2016 · Saifam Group · prod. Luigi Rana) · <em>Remédios</em> (2008 · prod. Stefano Brizi) · <em>Encontros</em> (2006 · Enthropia) · fra tanti altri singoli. I brani di SELMAH sono presenti in numerose compilation internazionali.</p>
@@ -655,6 +664,7 @@
     <div class="milici-box" style="border-left-color: var(--copper-light); background: rgba(200,150,62,0.06);">
       <p style="color: var(--sand); font-size: 15px; line-height: 1.9;">Considerato tra i più raffinati interpreti dell'armonica cromatica, Giuseppe Milici ha collaborato con Toots Thielemans, Gino Paoli, Fabrizio Bosso, Philip Catherine, Sarah Jane Morris e molti altri, oltre ad essersi presentato al Blue Note di New York, Tokyo e Milano, e in teatri e festival in oltre 20 paesi. Dal 2015 la sua musica accompagna i voli intercontinentali KLM.</p>
       <p style="color: var(--sand); font-size: 15px; line-height: 1.9; margin-top: 14px;">La sua presenza in Samba Rosa non è un'aggiunta — è una delle ragioni per cui questo concerto suona diverso da qualsiasi altra proposta di musica brasiliana sul mercato.</p>
+      <img src="foto_milici.jpg" alt="SELMAH e Giuseppe Milici live" style="width:100%; max-width:480px; height:auto; display:block; margin-top:24px;">
     </div>
 
   </div>
@@ -666,7 +676,8 @@
   <h2>Luigi <em>Rana</em></h2>
 
   <div class="milici-box">
-    <p style="font-size: 15px; line-height: 1.9; color: var(--text-mid);">Luigi Rana – Chitarrista, arrangiatore e produttore pluri-premiato (Dischi d'Oro e di Platino in Spagna e Asia), è un architetto sonoro capace di navigare tra pop, world music e produzioni internazionali. Con una carriera che attraversa i confini europei e asiatici, dove attualmente vanta più di 3 miliardi di stream per un suo brano, Luigi Rana porta in <em>Samba Rosa</em> una visione estetica raffinata, unendo l'accuratezza della produzione contemporanea al calore della chitarra d'autore.</p>
+    <p style="font-size: 15px; line-height: 1.9; color: var(--text-mid);">Luigi Rana – Chitarrista, arrangiatore e produttore pluri-premiato (Dischi d'Oro e di Platino in Spagna e Asia), è un architetto sonoro capace di navigare tra pop, world music e produzioni internazionali, con una carriera che attraversa i confini europei e asiatici. Luigi Rana porta in <em>Samba Rosa</em> una visione estetica raffinata, unendo l'accuratezza degli arrangiamenti e il suo tocco chitarristico.</p>
+    <img src="foto_rana.jpg" alt="SELMAH e Luigi Rana live" style="width:100%; max-width:480px; height:auto; display:block; margin-top:24px;">
   </div>
 </div>
 
@@ -678,32 +689,44 @@
 
   <div class="contacts-grid">
     <div class="contact-box">
-      <span class="contact-label">Email</span>
+      <span class="contact-label">Email & Web</span>
       <div class="contact-value">selmahernandesofficial@gmail.com</div>
+      <div style="margin-top:16px; padding-top:16px; border-top:1px solid rgba(184,116,58,0.15);">
+        <div class="contact-value"><a href="https://www.selmahernandes.it" target="_blank">selmahernandes.it</a></div>
+        <div style="display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;">
+          <a href="https://www.instagram.com/reel/DXK9MrhjEUC/" target="_blank" rel="noopener" class="social-btn" style="padding:8px 14px; font-size:10px;">
+            <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/reel/1233516868863534/" target="_blank" rel="noopener" class="social-btn" style="padding:8px 14px; font-size:10px;">
+            <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.youtube.com/channel/UCRVi_CdBGIvAhRcyuLfs7tw" target="_blank" rel="noopener" class="social-btn" style="padding:8px 14px; font-size:10px;">
+            <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor;"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+            YouTube
+          </a>
+        </div>
+      </div>
     </div>
+
     <div class="contact-box">
       <span class="contact-label">Telefono Italia</span>
-      <div class="contact-value">(+39) 393 955 6141<br>(+39) 333 702 8704</div>
-    </div>
-    <div class="contact-box">
-      <span class="contact-label">Sito & Social</span>
-      <div class="contact-value">
-        <a href="https://www.selmahernandes.it" target="_blank">selmahernandes.it</a><br>
-        @selmahernandes
+      <div class="contact-value">(+39) 393 955 6141</div>
+      <div style="margin-top:12px;">
+        <div class="contact-value">(+39) 333 702 8704</div>
       </div>
-      <div style="display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;">
-        <a href="https://www.instagram.com/reel/DXK9MrhjEUC/" target="_blank" rel="noopener" class="social-btn" style="padding:8px 14px; font-size:10px;">
-          <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          Instagram
-        </a>
-        <a href="https://www.facebook.com/reel/1233516868863534/" target="_blank" rel="noopener" class="social-btn" style="padding:8px 14px; font-size:10px;">
-          <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          Facebook
-        </a>
-        <a href="https://www.youtube.com/channel/UCRVi_CdBGIvAhRcyuLfs7tw" target="_blank" rel="noopener" class="social-btn" style="padding:8px 14px; font-size:10px;">
-          <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:currentColor;"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-          YouTube
-        </a>
+      <div style="margin-top:16px; padding-top:16px; border-top:1px solid rgba(184,116,58,0.15);">
+        <span class="contact-label">Telefono Brasile</span>
+        <div class="contact-value">(+55 11) 991 885 120</div>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <span class="contact-label">Sede Legale</span>
+      <div class="contact-value" style="font-size:14px; line-height:1.8;">
+        Unisono Associazione Culturale e Artistica<br>
+        <span style="font-size:12px; color:var(--text-light);">Sede Legale: Via X Marzo, 35<br>70026 Modugno (BA)<br>C.F./P.I. 07413890729</span>
       </div>
     </div>
   </div>
