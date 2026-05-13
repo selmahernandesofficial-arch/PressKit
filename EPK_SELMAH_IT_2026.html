@@ -497,6 +497,11 @@
     margin: 0 auto 32px;
   }
 
+  /* Foto duo affiancate */
+  .duo { display:flex; gap:4px; align-items:stretch; }
+  .duo > div { flex:1; overflow:hidden; height:650px; }
+  .duo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-photo { height: 45vh; }
@@ -509,6 +514,8 @@
     .ensemble-grid { grid-template-columns: 1fr; }
     .bio-grid { grid-template-columns: 1fr; }
     .contacts-grid { grid-template-columns: 1fr; }
+    .duo { flex-direction: column; }
+    .duo > div { height: 400px; }
     .footer { padding: 40px 24px; }
   }
 </style>
@@ -590,6 +597,11 @@
   <p class="lead">SELMAH porta sul palco un pezzo importante della storia musicale delle due nazioni, accostando le armonie brasiliane alla grande scuola musicale italiana, spaziando da Jobim a Fontana, da Ivan Lins e João Bosco a Domenico Modugno, passando per Toquinho e Calcanhoto per arrivare a Bardotti e Vanoni. Il concerto è pieno di momenti dinamici ed emotivi che catturano il pubblico.</p>
 </div>
 
+<!-- ══ FOTO LIVE BANNER ══ -->
+<div style="width:100%; display:block;">
+  <img src="Foto_Selma_Live_banner.png" alt="SELMAH ao vivo no palco" style="width:100%; height:auto; display:block;">
+</div>
+
 <!-- ══ SPECIAL GUEST GIUSEPPE MILICI ══ -->
 <div class="section-dark">
   <div class="inner">
@@ -623,11 +635,12 @@
     </div>
 
   </div>
-</div>
 
-<!-- ══ FOTO LIVE ══ -->
-<div style="width:100%; display:block;">
-  <img src="foto_live_hd.jpg" alt="SELMAH live sul palco" style="width:100%; height:auto; display:block;">
+  <!-- DUE FOTO AFFIANCATE -->
+  <div class="duo">
+    <div><img src="Selma_def_luci_verdi.JPG" alt="Selmah ao vivo — luci verdi"></div>
+    <div><img src="foto_con_Ornella.png" alt="SELMAH com Ornella Vanoni"></div>
+  </div>
 </div>
 
 <!-- ══ SELMAH BIO ══ -->
@@ -649,6 +662,14 @@
         <div class="label" style="font-size:9px; margin-top:20px; margin-bottom:12px;">Collaborazioni</div>
         <p class="inline-list">Toquinho · Toninho Horta · Ornella Vanoni · Guinga · Celso Fonseca · Renato Sellani · Gianluca Littera · Giuseppe Bassi · Vana Gierig · Roberto Ottaviano · Orchestra Ouro Preto · Daniele Scannapieco, fra tanti altri grandi musicisti</p>
 
+        <!-- FOTO TOQUINHO -->
+        <div style="display:flex; justify-content:center; margin-top:28px;">
+          <div style="max-width:480px; text-align:center;">
+            <img src="Con_toquinho_10.JPG" alt="SELMAH e Toquinho" style="width:100%; height:auto; display:block; border-radius:2px;">
+            <div style="font-size:12px; font-style:italic; margin-top:8px; opacity:0.7;">Grande tournée italiana con Toquinho</div>
+          </div>
+        </div>
+
         <div class="label" style="font-size:9px; margin-top:20px; margin-bottom:12px;">Discografia</div>
         <p class="inline-list"><em>A Voz do Rio</em> (2026, in uscita · prod. Luigi Rana) · <em>Sou da Paz</em> (2016 · Saifam Group · prod. Luigi Rana) · <em>Remédios</em> (2008 · prod. Stefano Brizi) · <em>Encontros</em> (2006 · Enthropia) · fra tanti altri singoli. I brani di SELMAH sono presenti in numerose compilation internazionali.</p>
       </div>
@@ -665,7 +686,13 @@
     <div class="milici-box" style="border-left-color: var(--copper-light); background: rgba(200,150,62,0.06);">
       <p style="color: var(--sand); font-size: 15px; line-height: 1.9;">Considerato tra i più raffinati interpreti dell'armonica cromatica, Giuseppe Milici ha collaborato con Toots Thielemans, Gino Paoli, Fabrizio Bosso, Philip Catherine, Sarah Jane Morris e molti altri, oltre ad essersi presentato al Blue Note di New York, Tokyo e Milano, e in teatri e festival in oltre 20 paesi. Dal 2015 la sua musica accompagna i voli intercontinentali KLM.</p>
       <p style="color: var(--sand); font-size: 15px; line-height: 1.9; margin-top: 14px;">La sua presenza in Samba Rosa non è un'aggiunta — è una delle ragioni per cui questo concerto suona diverso da qualsiasi altra proposta di musica brasiliana sul mercato.</p>
-      <img src="foto_milici.jpg" alt="SELMAH e Giuseppe Milici live" style="width:100%; max-width:480px; height:auto; display:block; margin-top:24px;">
+      <img src="Foto_Milici.jpg" alt="SELMAH e Giuseppe Milici live" style="width:100%; max-width:480px; height:auto; display:block; margin-top:24px;">
+      <p style="margin-top:16px; text-align:center;">
+        <a href="https://www.giuseppemilici.com/it_IT/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 20px; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--copper-light); border:1px solid var(--copper-light); text-decoration:none; transition:all 0.2s;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          giuseppemilici.com
+        </a>
+      </p>
     </div>
 
   </div>
@@ -678,7 +705,13 @@
 
   <div class="milici-box">
     <p style="font-size: 15px; line-height: 1.9; color: var(--text-mid);">Luigi Rana – Chitarrista, arrangiatore e produttore pluri-premiato (Dischi d'Oro e di Platino in Spagna e Asia), è un architetto sonoro capace di navigare tra pop, world music e produzioni internazionali, con una carriera che attraversa i confini europei e asiatici. Luigi Rana porta in <em>Samba Rosa</em> una visione estetica raffinata, unendo l'accuratezza degli arrangiamenti e il suo tocco chitarristico.</p>
-    <img src="foto_rana.jpg" alt="SELMAH e Luigi Rana live" style="width:100%; max-width:480px; height:auto; display:block; margin-top:24px;">
+    <img src="Foto_Luigi_solo.jpg" alt="SELMAH e Luigi Rana live" style="width:100%; max-width:480px; height:auto; display:block; margin-top:24px;">
+    <p style="margin-top:16px; text-align:center;">
+      <a href="https://www.luigirana.com/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 20px; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--copper); border:1px solid var(--copper); text-decoration:none; transition:all 0.2s;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        luigirana.com
+      </a>
+    </p>
   </div>
 </div>
 
