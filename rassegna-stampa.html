@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SELMAH — Rassegna Stampa 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ocean:#2C4A52;
+    --ocean-deep:#21383E;
+    --copper:#B8743A;
+    --copper-light:#D99460;
+    --sand:#E8D5B0;
+    --sand-light:#F0E2C6;
+    --cream:#F7F1E6;
+    --ink:#2A2420;
+    --muted:#7A6A58;
+    --line:#E0D2B8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  em{color:var(--copper);font-style:italic;}
+
+  .hero{
+    background:var(--ocean);
+    color:var(--sand-light);
+    padding:72px 24px 60px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+    width:120px;height:3px;background:var(--copper);
+  }
+  .hero .label{font-size:12px;letter-spacing:.38em;text-transform:uppercase;color:var(--copper-light);font-weight:500;}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(48px,11vw,96px);letter-spacing:.06em;margin:10px 0 6px;color:#fff;}
+  .hero .sub{font-size:clamp(14px,3.6vw,18px);color:var(--sand);letter-spacing:.04em;}
+  .hero .intro{max-width:620px;margin:24px auto 0;font-size:15px;font-weight:300;color:rgba(240,226,198,.85);}
+  .hero-btn{
+    display:inline-block;margin-top:28px;font-size:12px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--cream);
+    background:var(--copper);padding:13px 28px;border-radius:40px;
+    text-decoration:none;transition:background .25s,transform .25s;
+  }
+  .hero-btn:hover{background:var(--copper-light);transform:translateY(-2px);}
+  .flinks{margin-top:18px;font-size:13.5px;font-weight:300;color:var(--sand);line-height:2;}
+  .flinks a{color:var(--sand-light);text-decoration:none;border-bottom:1px solid var(--copper);}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  section{padding:56px 0;}
+  .sec-head{display:flex;align-items:flex-end;gap:20px;margin-bottom:34px;}
+  .sec-head .l{flex:1;}
+  .sec-head .label{display:block;font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--copper);font-weight:600;margin-bottom:8px;}
+  .sec-head h2{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,6vw,42px);line-height:1.08;color:var(--ocean);}
+  .sec-head .rule{flex:none;width:90px;height:1px;background:var(--line);margin-bottom:14px;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;align-items:stretch;}
+  .grid.cols-2{grid-template-columns:1fr 1fr;}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;
+    display:flex;flex-direction:column;
+    box-shadow:0 1px 2px rgba(42,36,32,.04);
+    transition:transform .35s ease,box-shadow .35s ease;
+    opacity:0;animation:rise .7s ease forwards;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(42,36,32,.12);}
+  .card-img{width:100%;height:210px;object-fit:cover;background:var(--sand);display:block;}
+  .card-img.full{height:auto;object-fit:contain;}
+  .card-img.top{object-position:top;}
+  .card-img.doc{height:360px;object-position:top;}
+  .card-body{padding:24px 24px 28px;}
+  .card-source{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);font-weight:600;margin-bottom:10px;}
+  .card-title{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;line-height:1.22;color:var(--ocean);margin-bottom:12px;}
+  .card-text{font-size:14.5px;font-weight:300;color:#473d34;}
+  .card-meta{margin-top:14px;font-size:12.5px;color:var(--muted);font-style:italic;}
+
+  .feature{
+    display:grid;grid-template-columns:1.05fr 1fr;gap:0;background:#fff;
+    border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-bottom:30px;
+    box-shadow:0 4px 16px rgba(42,36,32,.06);
+  }
+  .feature img{width:100%;height:100%;min-height:300px;object-fit:cover;background:var(--sand);}
+  .feature img.full{height:auto;min-height:0;object-fit:contain;align-self:start;}
+  .feature .card-body{padding:40px 38px;display:flex;flex-direction:column;justify-content:center;}
+  .feature .card-title{font-size:27px;}
+  .feature .card-text{font-size:16px;}
+
+  .dark{background:var(--ocean);color:var(--sand-light);}
+  .dark .sec-head h2{color:#fff;}
+  .dark .sec-head .label{color:var(--copper-light);}
+  .dark .sec-head .rule{background:rgba(232,213,176,.25);}
+  .dark .card,.dark .feature{background:rgba(255,255,255,.05);border-color:rgba(184,116,58,.3);}
+  .dark .card-title,.dark .feature .card-title{color:var(--sand-light);}
+  .dark .card-text{color:rgba(240,226,198,.82);}
+  .dark .card-source{color:var(--copper-light);}
+  .dark .card-meta{color:rgba(232,213,176,.6);}
+
+  .badge{display:inline-block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;background:var(--copper);color:#fff;padding:5px 12px;border-radius:40px;font-weight:600;margin-bottom:16px;align-self:flex-start;}
+
+  .award{background:var(--ocean-deep);color:var(--sand-light);border-top:3px solid var(--copper);border-bottom:3px solid var(--copper);}
+  .award .inner{max-width:1120px;margin:0 auto;padding:54px 24px;display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:center;}
+  .award img{width:100%;height:280px;object-fit:cover;object-position:top;border-radius:4px;background:var(--sand);}
+  .award .label{font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--copper-light);font-weight:600;}
+  .award h2{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(26px,5vw,38px);line-height:1.12;color:#fff;margin:10px 0 16px;}
+  .award p{font-size:16px;font-weight:300;color:rgba(240,226,198,.88);max-width:640px;}
+  .award .star{color:var(--copper-light);font-weight:600;font-style:normal;}
+  .award-album{display:flex;align-items:center;gap:18px;margin-top:24px;padding-top:22px;border-top:1px solid rgba(232,213,176,.2);}
+  .award-album img{width:104px;height:104px;object-fit:cover;border-radius:3px;flex:none;box-shadow:0 5px 16px rgba(0,0,0,.35);}
+  .award-album .ameta{font-size:13.5px;line-height:1.65;color:rgba(240,226,198,.85);}
+  .award-album .ameta strong{display:block;font-family:'Playfair Display',serif;font-size:17px;color:#fff;margin-bottom:3px;}
+  .award-album .ameta .acredit{color:var(--copper-light);}
+  .album-intro{display:flex;align-items:center;gap:24px;margin-bottom:32px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:4px;box-shadow:0 4px 16px rgba(42,36,32,.06);}
+  .album-intro img{width:130px;height:130px;object-fit:cover;border-radius:3px;flex:none;box-shadow:0 5px 16px rgba(42,36,32,.16);}
+  .album-intro .ai-meta strong{display:block;font-family:'Playfair Display',serif;font-size:24px;color:var(--ocean);margin-bottom:5px;}
+  .album-intro .ai-meta .acredit{display:block;font-size:11.5px;color:var(--copper);font-weight:600;letter-spacing:.14em;text-transform:uppercase;}
+  .album-intro .ai-meta p{font-size:14.5px;color:#473d34;margin-top:10px;font-weight:300;}
+  @media(max-width:600px){.album-intro{flex-direction:column;text-align:center;}}
+  .splink{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ocean);background:var(--sand);padding:8px 16px;border-radius:40px;text-decoration:none;transition:background .25s,transform .25s;}
+  .splink:hover{background:#fff;transform:translateY(-2px);}
+
+  .card.txt .card-body{padding:30px 26px 32px;}
+  .card.txt{justify-content:center;}
+
+  footer{background:var(--ocean);color:var(--sand-light);text-align:center;padding:60px 24px 50px;}
+  footer .fname{font-family:'Playfair Display',serif;font-size:40px;letter-spacing:.08em;color:#fff;}
+  footer .fsub{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--copper-light);margin:8px 0 26px;}
+  footer .frule{width:70px;height:1px;background:rgba(232,213,176,.3);margin:0 auto 26px;}
+  footer .fcontact{font-size:15px;font-weight:300;color:var(--sand);line-height:1.9;}
+  footer a{color:var(--sand-light);text-decoration:none;border-bottom:1px solid var(--copper);}
+
+  @keyframes rise{to{opacity:1;transform:translateY(0);}}
+  .card:nth-child(1){animation-delay:.02s}.card:nth-child(2){animation-delay:.08s}
+  .card:nth-child(3){animation-delay:.14s}.card:nth-child(4){animation-delay:.2s}
+
+  @media(max-width:760px){
+    .feature{grid-template-columns:1fr;}
+    .feature img{min-height:240px;}
+    .award .inner{grid-template-columns:1fr;text-align:center;}
+    .award img{height:240px;}
+    .grid.cols-2{grid-template-columns:1fr;}
+    .sec-head .rule{display:none;}
+    section{padding:44px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <span class="label">Rassegna Stampa · Press Review</span>
+  <h1>SELMAH</h1>
+  <div class="sub">Selma Hernandes · Fusion · Italian Music · Brazilian Jazz</div>
+  <p class="intro">Una carriera tra il Brasile e l'Italia — da Atibaia all'Amazzonia, e da lì ai palchi europei, al fianco di Toquinho, Toninho Horta e Ornella Vanoni.</p>
+  <a class="hero-btn" href="https://www.selmahernandes.it/" target="_blank" rel="noopener">Press Kit completo →</a>
+</header>
+
+<!-- AWARD HIGHLIGHT — GALLUZZI -->
+<div class="award">
+  <div class="inner">
+    <img src="image-001.jpg" alt="XVI Premio Pierluigi Galluzzi a Selma Hernandes">
+    <div>
+      <span class="label">Premio · 2016</span>
+      <h2>XVI Premio Pierluigi Galluzzi</h2>
+      <p>Selma Hernandes ha ricevuto il 16º <strong>Premio Pierluigi Galluzzi</strong> (Jazz Blues Fest, Polignano) per l'album <em>Sou da Paz</em> — <span class="star">la prima donna a ricevere il premio</span>, entrando in un albo d'oro con nomi internazionali come Benny Golson, Biréli Lagrène ed Enzo Avitabile. "Per me è un grande onore", ha dichiarato.</p>
+      <div class="award-album">
+        <img src="image-002.jpg" alt="Copertina dell'album Sou da Paz, di Selma Hernandes">
+        <div class="ameta">
+          <strong><em>Sou da Paz</em> — album premiato</strong>
+          <span class="acredit">Produzione: Luigi Rana · Label: Saifam Group</span>
+          <a class="splink" href="https://open.spotify.com/album/09as9QfkivbXYhBe1i0T0O" target="_blank" rel="noopener">▶ Ascolta su Spotify</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SINFONIE D'AUTORE -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">
+        <span class="label">Premio · Maiori · 2015</span>
+        <h2>Premiata al <em>"Sinfonie d'Autore"</em></h2>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <div class="feature">
+      <img src="image-003.jpg" alt="Premio Sinfonie d'Autore, Maiori — Selma Hernandes e Gianluca Grignani">
+      <div class="card-body">
+        <span class="card-source">Premio "Sinfonie d'Autore" · Maiori (Costa Amalfitana)</span>
+        <h3 class="card-title">Premiata nella stessa edizione di <em>Gianluca Grignani</em></h3>
+        <p class="card-text">Selma Hernandes è stata premiata nella VI edizione del premio <strong>"Sinfonie d'Autore"</strong>, all'Anfiteatro del Porto Turistico di Maiori — nella stessa edizione di <strong>Gianluca Grignani</strong>. Evento trasmesso in Eurovisione Sky.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REMEDIOS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">
+        <span class="label">Successo radiofonico · Italia</span>
+        <h2>Il fenomeno <em>"Remedios"</em></h2>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <div class="feature">
+      <img src="image-004.jpg" alt="Copertina del singolo Remedios — DJ Brizi & Selma Hernandes vs. Relight Orchestra">
+      <div class="card-body">
+        <span class="card-source">Italia · 2007–2008</span>
+        <h3 class="card-title">"Remedios" — DJ Brizi &amp; Selma Hernandes</h3>
+        <p class="card-text">La versione di <strong>DJ Brizi &amp; Selma Hernandes</strong> del classico di Gabriella Ferri (1974) — tema del film <em>Saturno Contro</em> di Ferzan Özpetek — è diventata un <strong>successo delle radio italiane</strong>, scalando la chart <strong>"Fifty Songs" di Radio Deejay</strong> e figurando tra i brani più trasmessi delle emittenti del paese. Il brano ha ottenuto anche una versione con la Relight Orchestra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOQUINHO -->
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">
+        <span class="label">Tour in Italia · 2015–2017</span>
+        <h2>In tour con <em>Toquinho</em></h2>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <div class="feature">
+      <img src="image-005.jpg" alt="Toquinho e Selma Hernandes — comunicato ANSA, tour in Italia">
+      <div class="card-body">
+        <span class="card-source">ANSA · Cultura/Musica · 19 luglio 2017</span>
+        <h3 class="card-title">Toquinho, tour Italia con Selma Hernandes</h3>
+        <p class="card-text">L'agenzia nazionale <strong>ANSA</strong> annuncia: dieci date per un tour interamente italiano. Toquinho — che celebra 50 anni di carriera — ha come ospite la connazionale <strong>Selma Hernandes</strong>. Per la prima volta i due insieme sul palco, in un progetto di Musica Popolare Brasiliana con direzione artistica di <strong>Luigi Rana</strong>. Debutto a Foggia, 22 luglio.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <img class="card-img doc" src="image-006.jpg" alt="Selma Hernandes e Toquinho abbracciati sul palco — Castrovillari">
+        <div class="card-body">
+          <span class="card-source">ABM Report · Castrovillari · 2017</span>
+          <p class="card-text" style="color:var(--sand-light);font-style:italic;font-size:16px;">"Selma Hernandes e Toquinho — una coppia perfetta. Un'alchimia unica e intergenerazionale, in un progetto live italiano esclusivo che ha celebrato i suoi 50 anni di carriera."</p>
+          <p class="card-meta">Foto: Giuseppe Iazzolino</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img doc" src="image-007.jpg" alt="Toquinho e Selma Hernandes sul palco di Capo d'Orlando">
+        <div class="card-body">
+          <span class="card-source">AnniSessantaNews · Capo d'Orlando · 4 agosto 2017</span>
+          <p class="card-text" style="color:var(--sand-light);font-style:italic;font-size:16px;">"Il padre della bossa nova, accompagnato da Selma Hernandes, ha condotto il pubblico in un viaggio di musica, parole e canzoni."</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img doc" src="image-008.png" alt="Toquinho incanta il Palazzo d'Avalos">
+        <div class="card-body">
+          <span class="card-source">Zonalocale.it · Vasto</span>
+          <p class="card-text" style="color:var(--sand-light);font-style:italic;font-size:16px;">"Il chitarrista brasiliano ha portato un pezzo di Brasile a Vasto al fianco della 'meravigliosa cantante Selma Hernandes'."</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TONINHO HORTA -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">
+        <span class="label">Italia · novembre 2024 · special guest</span>
+        <h2>Special guest di <em>Toninho Horta</em></h2>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <img class="card-img" src="image-009.jpg" alt="Toninho Horta Trio — Ionio Jazz Festival, special guest Selma Hernandes">
+        <div class="card-body">
+          <span class="card-source">Ionio Jazz Festival · Stazione 37 · 11 nov 2024</span>
+          <h3 class="card-title">Special guest del <em>Toninho Horta Trio</em></h3>
+          <p class="card-text">Ospite speciale del <strong>Toninho Horta Trio</strong> — il leggendario chitarrista e compositore mineiro, <strong>vincitore del Grammy</strong> (2020) — in concerto internazionale per lo <em>Ionio Jazz Festival</em>. Con Toninho Horta (chitarra e voce), Lena Horta (flauto) e Yuri Popoff (basso).</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img" src="image-010.jpg" alt="Toninho Horta — Jazz&amp;Amore, Università della Calabria, con Selma Hernandes">
+        <div class="card-body">
+          <span class="card-source">Jazz&amp;Amore · Università della Calabria, Rende (CS) · 10 nov 2024</span>
+          <h3 class="card-title">Con Toninho Horta all'Università della Calabria</h3>
+          <p class="card-text">Al festival <em>Jazz&amp;Amore</em>, nel Teatro Auditorium dell'<strong>Università della Calabria</strong> (Rende), come voce ospite di <strong>Toninho Horta</strong>, al fianco di Yuri Popoff (basso) e Lena Horta (flauto).</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ORNELLA VANONI -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">
+        <span class="label">Roma · Auditorium Parco della Musica · 2013</span>
+        <h2>Con <em>Ornella Vanoni</em></h2>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <img class="card-img top" src="image-011.jpg" alt="Vinicius, Confederation samba — Corriere della Sera">
+        <div class="card-body">
+          <span class="card-source">Corriere della Sera · giugno 2013</span>
+          <h3 class="card-title">Vinicius, Confederation Samba — Sala Sinopoli</h3>
+          <p class="card-text">All'Auditorium Parco della Musica (Roma), Selma è la protagonista della serata per il centenario di Vinicius de Moraes — le melodie con Ornella Vanoni e Selma Hernandes, i versi con Orso Maria Guerrini.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img" src="image-012.jpg" alt="Una notte per Vinicius — locandina">
+        <div class="card-body">
+          <span class="card-source">"Una notte per Vinicius" · Roma · 22 giu 2013</span>
+          <h3 class="card-title">Una notte per Vinicius — con Ornella Vanoni</h3>
+          <p class="card-text">Selma nel cast principale al fianco di Celso Fonseca, Tony Bungaro, Carla Cocco ed Eddy Palermo, con la partecipazione speciale di <strong>Ornella Vanoni</strong> e la voce di Orso Maria Guerrini. Auditorium Parco della Musica, Sala Sinopoli, Roma.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MILICI — PROGETTO ATTUALE -->
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">
+        <span class="label">Selmah &amp; Giuseppe Milici</span>
+        <h2>Selmah &amp; <em>Giuseppe Milici</em></h2>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <div class="feature">
+      <img src="image-013.jpg" alt="Selma Hernandes special guest Giuseppe Milici">
+      <div class="card-body">
+        <span class="badge">Special Guest</span>
+        <span class="card-source">Beat Onto Jazz Festival · Bitonto</span>
+        <h3 class="card-title">Selma Hernandes — special guest Giuseppe Milici</h3>
+        <p class="card-text">Selma sale sul palco con un ospite d'eccezione: <strong>Giuseppe Milici</strong>, virtuoso dell'armonica di recente applaudito al Blue Note di Tokyo. Due artisti raffinati che danno alla musica brasiliana una dimensione nuova ed emozionante — sotto la direzione musicale di Luigi Rana.</p>
+        <p class="card-meta">Selma Hernandes (voce, percussioni) · Giuseppe Milici (armonica) · Luigi Rana (chitarra classica, direzione musicale) · Trio Unisono (basso, pianoforte, batteria)</p>
+      </div>
+    </div>
+    <div class="grid cols-2">
+      <article class="card">
+        <img class="card-img full" src="image-014.png" alt="Armonie del Sud — Modugno 2026">
+        <div class="card-body">
+          <span class="card-source">Gazzetta del Mezzogiorno · Cultura e Spettacolo · 2026</span>
+          <h3 class="card-title">«Armonie del Sud», quando la musica diventa paesaggio</h3>
+          <p class="card-text">Nella nuova stagione "Armonie del Sud" (associazione Unisono), Selma è in testa al <em>Selmah – Brazilian Music Concert</em> all'Auditorium Tommaso Fiore, con Giuseppe Milici e la direzione di Luigi Rana. Samba, bossa nova e choro in un mosaico di ritmo e melodia — "una delle voci più raffinate" della musica brasiliana in Italia.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img full" src="image-015.jpg" alt="Selmah e l'arte di cantare l'anima del sud del mondo">
+        <div class="card-body">
+          <span class="card-source">Gazzetta del Mezzogiorno · Cultura e Spettacolo · 2026</span>
+          <h3 class="card-title">Selmah e l'arte di cantare l'anima del sud del mondo</h3>
+          <p class="card-text">All'Auditorium "Tommaso Fiore", Selmah conduce il <em>Selmah – Brazilian Music Concert</em> con Milici e Luigi Rana — un viaggio attraverso samba, bossa nova e choro dove l'eleganza vocale incontra il calore tropicale. "Interpreta la tradizione brasiliana unendo vocalità elegante e sensibilità contemporanea".</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RECENTI & IN EVIDENZA -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">
+        <span class="label">Recenti &amp; in evidenza</span>
+        <h2>Sulla <em>stampa</em></h2>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <img class="card-img" src="image-016.png" alt="Corriere della Sera — Selma Hernandes 2026">
+        <div class="card-body">
+          <span class="card-source">Corriere della Sera · febbraio 2026</span>
+          <h3 class="card-title">La nuova stagione si apre con la voce di Selma Hernandes</h3>
+          <p class="card-text">Selma Hernandes — con quintetto jazz e il sassofonista ospite Daniele Scannapieco — inaugura, il 20 febbraio, la nuova stagione della Fondazione Valente all'Auditorium Regina Pacis (Molfetta). Un cartellone di <strong>17 date</strong> che riunisce nomi come <strong>Richard Galliano</strong>, Mario Venuti, Tony Canto, Gianmarco Tognazzi e Javier Girotto.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img" src="image-017.png" alt="Selma Hernandes con l'Orchestra Sinfonica Metropolitana di Bari, direzione Rodrigo Toffolo">
+        <div class="card-body">
+          <span class="card-source">Stagione Concertistica 2017 · Palazzo dell'Ateneo · Bari</span>
+          <h3 class="card-title">Selma Hernandes con l'Orchestra Sinfonica Metropolitana di Bari</h3>
+          <p class="card-text">Selma Hernandes, accompagnata dall'<strong>Orchestra Sinfonica della Città Metropolitana di Bari</strong>, diretta dal Maestro brasiliano <strong>Rodrigo Toffolo</strong> — ha presentato un repertorio dedicato ai classici della musica brasiliana, in un progetto ideato con il produttore <strong>Luigi Rana</strong>. Partecipazione speciale: <strong>Luigi Rana</strong> (chitarra classica).</p>
+          <p class="card-meta">Bari · 30 giugno 2017</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img" src="image-018.jpg" alt="Selma Hernandes con l'Orchestra Ouro Preto al Grande Teatro del Sesc Palladium, Belo Horizonte">
+        <div class="card-body">
+          <span class="card-source">Orchestra Ouro Preto · Sesc Palladium, Belo Horizonte · 2017</span>
+          <h3 class="card-title">Ospite dell'Orchestra Ouro Preto, a Belo Horizonte</h3>
+          <p class="card-text">Per la serie <em>Domingos Clássicos</em>, al Grande Teatro del <strong>Sesc Palladium</strong> (Belo Horizonte), Selma Hernandes è stata ospite dell'<strong>Orchestra Ouro Preto</strong> — l'orchestra residente del maestro Rodrigo Toffolo — in un concerto diretto dal <strong>Maestro Nino Lepore</strong> (Italia): un altro incontro tra la sua voce e una grande orchestra, questa volta in Brasile.</p>
+          <p class="card-meta">Belo Horizonte · 8 ottobre 2017</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img top" src="image-019.jpg" alt="Giornale di Sicilia — Selma Hernandes e Luigi Rana">
+        <div class="card-body">
+          <span class="card-source">Giornale di Sicilia · Palermo · 2019</span>
+          <h3 class="card-title">Voce brasiliana e chitarra dalla Puglia — Selma Hernandes e Luigi Rana</h3>
+          <p class="card-text">Al teatro Agricantus, il duo Selma Hernandes e il chitarrista Luigi Rana presenta "PuntoBossa" — molto nota in Italia per il successo "Remedios".</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img" src="image-021.jpg" alt="Selma Hernandes negli studi di RAI Radio 1">
+        <div class="card-body">
+          <span class="card-source">RAI Radio 1 · programma "Brasil"</span>
+          <h3 class="card-title">Ospite ricorrente del programma <em>"Brasil"</em> di RAI Radio 1</h3>
+          <p class="card-text">Selma Hernandes ha partecipato più volte al programma <strong>"Brasil"</strong> di <strong>RAI Radio 1</strong> (radio pubblica nazionale italiana), condotto da <strong>Max De Tomassi</strong>: per presentare i suoi singoli e album e, come <strong>ospite speciale</strong>, per parlare di generi della musica brasiliana — come il <strong>choro</strong> — e della presenza della donna nella musica. Il programma include i suoi brani nella sua selezione di MPB, al fianco di nomi come <strong>Caetano Veloso</strong>, <strong>Sergio Mendes</strong>, <strong>Roberta Sá</strong> e <strong>Rosa Passos</strong>.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- I PRIMI ANNI -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">
+        <span class="label">Italia · Umbria · l'album <em>Encontros</em></span>
+        <h2>I primi <em>anni</em></h2>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <div class="album-intro">
+      <img src="image-022.jpg" alt="Copertina dell'album Encontros, di Selma Hernandes">
+      <div class="ai-meta">
+        <strong><em>Encontros</em></strong>
+        <span class="acredit">Album d'esordio · Label Enthropya · Perugia</span>
+        <p>Il primo album di Selma Hernandes — un viaggio attraverso la musica popolare brasiliana, registrato con il suo gruppo e con ospiti come il fisarmonicista Luciano Biondini, Rubem Chaviano, Francesco Petreni e Israel Freire. Ensemble: Leopoldo Calabria, Andrea Agostini e Gianni Spolettini.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <img class="card-img" src="image-023.jpg" alt="Selma Hernandes con Gianluca Littera nel progetto Rio – Buenos Aires, Villa Celimontana, Roma">
+        <div class="card-body">
+          <span class="card-source">Villa Celimontana Jazz · Roma · ~2006</span>
+          <h3 class="card-title"><em>Rio – Buenos Aires</em>, con Gianluca Littera</h3>
+          <p class="card-text">Invitata dal rinomato armonicista <strong>Gianluca Littera</strong> per il progetto <em>Rio – Buenos Aires</em>, presentato con grande successo alla <strong>Villa Celimontana</strong>, a Roma — uno dei palchi jazz più prestigiosi della capitale italiana.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img" src="image-024.jpg" alt="Jazzitalia — recensione Encontros">
+        <div class="card-body">
+          <span class="card-source">Jazzitalia · recensione dell'album</span>
+          <h3 class="card-title">Selma Hernandes — <em>Encontros</em>: un viaggio attraverso tutti gli stili della musica brasiliana</h3>
+          <p class="card-text">Dall'apertura "Berimbau" (Baden Powell/Vinicius) a Caetano, Chico e Guinga — in evidenza la fisarmonica di Luciano Biondini, la creatività degli arrangiamenti e lo straordinario viaggio vocale di Selma attraverso la storia della musica brasiliana.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img top" src="image-025.jpg" alt="Revista VIP São Paulo — Cantora de Atibaia">
+        <div class="card-body">
+          <span class="card-source">Revista VIP · São Paulo (Brasile)</span>
+          <h3 class="card-title">La cantante di Atibaia è un successo in Italia</h3>
+          <p class="card-text">Profilo della rivista brasiliana: da Atibaia all'Italia, dalla selezione tra le 14 migliori cantanti nel concorso "Novos Talentos" (Rede Globo/Sony) alla borsa di studio a Perugia, all'album <em>Encontros</em> e al successo di "Remedios" nel cinema di Özpetek — con produzione di Luigi Rana.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img" src="image-026.jpg" alt="Corriere dell'Umbria — La bella Selma">
+        <div class="card-body">
+          <span class="card-source">Corriere dell'Umbria · Perugia</span>
+          <h3 class="card-title">La bella Selma canta la nostalgia e i colori del suo Brasile</h3>
+          <p class="card-text" style="color:var(--ocean);font-style:italic;font-size:16px;">"Su questa pedana sono passate tante persone illustri, da divi del cinema a scrittori, economisti, politici, ma raramente si è sentito così caldo e coinvolgente l'affetto del pubblico."</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img" src="image-027.jpg" alt="Jazzitalia — A dea do Brasil cantou">
+        <div class="card-body">
+          <span class="card-source">Jazzitalia · concerto · Palazzo Penna</span>
+          <h3 class="card-title">La dea del Brasile ha cantato — tutto esaurito a "Tenera è la notte"</h3>
+          <p class="card-text">Recensione di Marcello Migliosi per <strong>Jazzitalia</strong> (portale web jazz): tutto esaurito al Palazzo Penna, per l'iniziativa "Tenera è la notte". Selma racconta il Brasile cantando — un repertorio che attraversa tutti gli stili, dal choro al samba, dal baião alla bossa nova, da Baden Powell a Tom Jobim — conducendo il pubblico in un viaggio attraverso la storia della musica brasiliana.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img top" src="image-028.jpg" alt="La Nazione — Selma, la felicità di Encontros">
+        <div class="card-body">
+          <span class="card-source">La Nazione · Perugia</span>
+          <h3 class="card-title">Selma, la felicità di <em>Encontros</em></h3>
+          <p class="card-text">Profilo dell'album d'esordio (etichetta Enthropya): da "Berimbau" a Chico Buarque e Caetano Veloso, registrato con il suo gruppo e ospiti come Luciano Biondini. "La poesia aiuta a capire la vita", dice la cantante nata ad Atibaia (SP).</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img top" src="image-029.jpg" alt="Musibrasil — recensione Encontros">
+        <div class="card-body">
+          <span class="card-source">Musibrasil.org · recensione CD</span>
+          <h3 class="card-title"><em>Encontros</em> — un disco elegante e ben fatto</h3>
+          <p class="card-text">La recensione del disco d'esordio mette in luce gli arrangiamenti creativi sui classici: da "Berimbau" a "Cajuína", da Guinga a Luiz Gonzaga, con la fisarmonica dell'illustre ospite Luciano Biondini. "Un disco elegante e ben fatto."</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img top" src="image-030.jpg" alt="Selma: ritmo e passione">
+        <div class="card-body">
+          <span class="card-source">Stampa · Umbria</span>
+          <h3 class="card-title">Selma: ritmo e passione</h3>
+          <p class="card-text">In un'intervista, Selma parla del suo amore per la musica e per l'Umbria, "il mio angolo di Brasile", e della ricchezza della cultura brasiliana — frutto dell'incontro di almeno tre culture: indigena, europea e africana.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img top" src="image-031.jpg" alt="Selma Hernandes, il Brasile in una voce">
+        <div class="card-body">
+          <span class="card-source">Perugia · Sala dei Notari</span>
+          <h3 class="card-title">Selma Hernandes, il Brasile in una voce</h3>
+          <p class="card-text">Nella Sala dei Notari, nell'ambito del programma natalizio del Comune di Perugia, Selma presenta con il suo quintetto un "viaggio attraverso la storia della musica brasiliana", dal samba alla bossa nova.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img" src="image-032.jpg" alt="Un volo in Brasile con il Selma Hernandes group">
+        <div class="card-body">
+          <span class="card-source">Perugia · Palazzo Penna</span>
+          <h3 class="card-title">Un volo in Brasile con il Selma Hernandes Group</h3>
+          <p class="card-text">Alla Notte Bianca di Perugia, al Palazzo Penna, il sestetto di Selma presenta <em>Minha alma brasileira</em> — alternando ritmi brasiliani e brevi racconti sulla cultura e la storia del paese.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- BRASILE 1995–2000 -->
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">
+        <span class="label">Brasile · 1995–2000</span>
+        <h2>I <em>successi</em> brasiliani</h2>
+      </div>
+      <div class="rule"></div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <img class="card-img top" src="image-034.jpg" alt="Selma vince il 3º FAM — Diário da Amazônia">
+        <div class="card-body">
+          <span class="card-source">Diário da Amazônia · 1998</span>
+          <h3 class="card-title">1º posto e miglior interprete — Festival Aberto de Música (FAM/SESC, Porto Velho)</h3>
+          <p class="card-text">Con la canzone "Moinhos" di Bráulio Araújo, Selma Hernandes ha vinto il 3º FAM/SESC conquistando anche il premio di <strong>miglior interprete</strong> del festival.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card-img" src="image-035.jpg" alt="Selma dà spettacolo alla Globo — Domingão do Faustão">
+        <div class="card-body">
+          <span class="card-source">Rede Globo · "Novos Talentos" · 1999–2000</span>
+          <h3 class="card-title">3º posto nel primo grande talent show del Brasile — Domingão do Faustão</h3>
+          <p class="card-text">Tra circa <strong>30.000 iscritti</strong> da tutto il paese, Selma Hernandes ha raggiunto la finale del concorso "Novos Talentos" del <em>Domingão do Faustão</em> (Rede Globo, con la Sony Music), conquistando il <strong>3º posto nazionale</strong>. Si stima che <strong>45 milioni di telespettatori</strong> abbiano assistito alla sua esibizione dal vivo.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fname">SELMAH</div>
+  <div class="fsub">Press Kit 2026–2027</div>
+  <div class="frule"></div>
+  <div class="fcontact">
+    Per contatti e stampa: <a href="mailto:selmahernandesofficial@gmail.com">selmahernandesofficial@gmail.com</a><br>
+    WhatsApp: +39 333 702 8704<br>
+    Brasile: +55 11 991 885 120 — <span style="font-size:13px;opacity:.8;">attivo solo durante la Temporada in Brasile (ottobre 2026)</span>
+  </div>
+  <div class="flinks">
+    Press Kit (IT): <a href="https://www.selmahernandes.it/" target="_blank" rel="noopener">www.selmahernandes.it</a><br>
+    Luigi Rana: <a href="https://www.luigirana.com" target="_blank" rel="noopener">luigirana.com</a> · Giuseppe Milici: <a href="https://www.giuseppemilici.com" target="_blank" rel="noopener">giuseppemilici.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
