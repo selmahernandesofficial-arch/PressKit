@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SELMAH &amp; Luigi Rana — Hotel Residency One Sheet</title>
+<style>
+:root{
+  --notte:#15131B; --rosa:#D78F9B; --rosa-viva:#E8A8B3; --rosa-cupa:#B06672;
+  --oro:#C8A35F; --avorio:#F5F1E8; --carta:#FDFBF6;
+  --inchiostro:#221E1A; --inchiostro-mid:#4A443C; --grigio:#8A8278;
+  --hairline:rgba(34,30,26,.14);
+}
+@page{ size:A4; margin:0; }
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+body{
+  font-family:'Hanken Grotesk';font-weight:300;color:var(--inchiostro);
+  background:var(--avorio);font-size:9.4pt;line-height:1.45;
+}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:var(--avorio);}
+
+/* ── Dark hero band ── */
+.hero{
+  background:var(--notte);color:var(--avorio);
+  padding:10mm 13mm 8mm;position:relative;
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--oro) 30%,var(--rosa) 70%,transparent);
+}
+.topbar{display:flex;justify-content:space-between;align-items:baseline;
+  font-size:6.6pt;letter-spacing:.32em;text-transform:uppercase;color:var(--rosa);}
+.topbar .right{color:var(--oro);}
+.hero-grid{display:table;width:100%;margin-top:5mm;}
+.hero-txt{display:table-cell;vertical-align:middle;width:60%;padding-right:8mm;}
+.hero-pics{display:table-cell;vertical-align:middle;width:40%;}
+h1{font-family:'Italiana';font-weight:400;font-size:31pt;line-height:1.02;letter-spacing:.02em;color:var(--avorio);}
+h1 .amp{font-family:'Fraunces';font-style:italic;font-weight:400;color:var(--rosa);font-size:24pt;}
+.subtitle{font-family:'Fraunces';font-style:italic;font-weight:400;font-size:12.5pt;color:var(--oro);margin-top:2.5mm;}
+.lead{font-size:9.2pt;font-weight:300;color:#DDD6CB;margin-top:4mm;line-height:1.5;}
+.lead strong{font-weight:600;color:var(--avorio);}
+.pics{display:table;width:100%;border-collapse:separate;border-spacing:2.5mm 0;}
+.pic{display:table-cell;width:50%;vertical-align:top;}
+.pic img{width:100%;height:46mm;object-fit:cover;display:block;border:1px solid rgba(200,163,95,.5);}
+.duo-shot img{width:100%;height:52mm;object-fit:cover;object-position:center 40%;display:block;border:1px solid rgba(200,163,95,.5);}
+.duo-shot .cap{font-size:6.2pt;letter-spacing:.26em;text-transform:uppercase;color:var(--grigio);margin-top:1.6mm;text-align:center;}
+
+/* ── Body ── */
+.body{padding:6mm 13mm 0;}
+.cols{display:table;width:100%;table-layout:fixed;}
+.col-l{display:table-cell;vertical-align:top;width:62%;padding-right:7mm;}
+.col-r{display:table-cell;vertical-align:top;width:38%;}
+.eyebrow{font-size:6.8pt;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--rosa-cupa);margin-bottom:2mm;}
+.sec{margin-bottom:3.6mm;}
+p.txt{color:var(--inchiostro-mid);font-size:9pt;}
+p.txt strong{color:var(--inchiostro);font-weight:600;}
+.rep{border-top:1px solid var(--hairline);}
+.rep .row{display:table;width:100%;border-bottom:1px solid var(--hairline);padding:1.8mm 0;}
+.rep .k{display:table-cell;width:34%;font-family:'Fraunces';font-style:italic;font-size:9.5pt;color:var(--rosa-cupa);vertical-align:top;}
+.rep .v{display:table-cell;font-size:8.6pt;color:var(--inchiostro-mid);vertical-align:top;}
+
+/* right column panel */
+.panel{background:var(--carta);border:1px solid var(--hairline);padding:4mm 5mm;position:relative;}
+.panel::before{content:"";position:absolute;inset:2mm;border:1px solid rgba(200,163,95,.35);pointer-events:none;}
+.panel .inner{position:relative;}
+.fact{padding:2mm 0;border-bottom:1px solid var(--hairline);}
+.fact:last-child{border-bottom:0;}
+.fact .fk{font-size:6.4pt;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--grigio);}
+.fact .fv{font-size:9pt;color:var(--inchiostro);font-weight:400;margin-top:.6mm;}
+.fact .fv strong{font-weight:600;}
+
+/* highlights */
+.high{margin-top:5mm;}
+.high .item{padding:1.7mm 0;border-bottom:1px solid var(--hairline);}
+.high .item:last-child{border-bottom:0;}
+.high .hk{font-family:'Italiana';font-size:11pt;color:var(--inchiostro);}
+.high .hv{font-size:8.2pt;color:var(--inchiostro-mid);margin-top:.4mm;}
+.quote{font-family:'Fraunces';font-style:italic;font-size:11pt;color:var(--inchiostro);line-height:1.4;margin:1.5mm 0 1mm;}
+.quote-src{font-size:6.6pt;letter-spacing:.24em;text-transform:uppercase;color:var(--grigio);}
+
+/* footer */
+.footer{
+  position:absolute;left:0;right:0;bottom:0;background:var(--notte);color:var(--avorio);
+  padding:5.5mm 13mm;display:table;width:100%;
+}
+.footer::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--rosa) 30%,var(--oro) 70%,transparent);}
+.f-cell{display:table-cell;vertical-align:middle;}
+.f-name{font-family:'Italiana';font-size:13pt;letter-spacing:.08em;}
+.f-tag{font-size:6.4pt;letter-spacing:.28em;text-transform:uppercase;color:var(--rosa);margin-top:1mm;}
+.f-contact{text-align:right;font-size:8.4pt;color:#DDD6CB;line-height:1.55;}
+.f-contact strong{color:var(--oro);font-weight:600;letter-spacing:.06em;}
+.videos{margin-top:2.5mm;}
+.vlink{font-size:8.2pt;color:var(--inchiostro-mid);padding:1.3mm 0;border-bottom:1px solid var(--hairline);display:block;}
+.vlink:last-child{border-bottom:0;}
+.vlink .arrow{color:var(--rosa-cupa);font-weight:600;}
+.vlink strong{color:var(--inchiostro);font-weight:600;}
+.url{color:var(--rosa-cupa);}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="topbar">
+      <span>Luxury Hospitality · Live Music Residency</span>
+      <span class="right">One Sheet · 2026 / 2027</span>
+    </div>
+    <div class="hero-grid">
+      <div class="hero-txt">
+        <h1>SELMAH <span class="amp">&amp;</span><br>LUIGI RANA</h1>
+        <div class="subtitle">The Brazilian Voice &amp; Classical Guitar Duo</div>
+        <p class="lead">
+          Bossa nova, samba-jazz and the great Brazilian songbook — with elegant excursions
+          into Italian and Latin classics, <strong>performed with the refinement your guests expect</strong>.
+          An intimate acoustic duo shaped by <strong>35 years on stage between Brazil and Italy</strong>,
+          alongside Toquinho, Grammy winner Toninho Horta and Ornella Vanoni.
+        </p>
+      </div>
+      <div class="hero-pics">
+        <div class="duo-shot">
+          <img src="duo.jpg" alt="SELMAH and Luigi Rana live">
+          <div class="cap">Selmah &amp; Luigi Rana · live</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+    <div class="cols">
+      <div class="col-l">
+
+        <div class="sec">
+          <div class="eyebrow">The Duo</div>
+          <p class="txt">
+            <strong>SELMAH</strong> (Selma Hernandes) — voice &amp; light percussion — is one of the Brazilian
+            voices with the longest continuous presence on the Italian music scene: a warm, magnetic
+            contralto praised by the Italian press and a recurring guest on RAI Radio&nbsp;1.
+            <strong>Luigi Rana</strong> — classical guitar &amp; musical direction — is a multi-platinum
+            arranger (Europe and Asia) whose elegant, orchestral guitar carries the entire evening
+            with no need for a band.
+          </p>
+        </div>
+
+        <div class="sec">
+          <div class="eyebrow">Repertoire · curated by daypart</div>
+          <div class="rep">
+            <div class="row"><div class="k">Aperitivo &amp; sunset</div><div class="v">Bossa nova and Brazilian ballads — Jobim, João Gilberto, Vinicius de Moraes — at discreet, conversation-friendly volume.</div></div>
+            <div class="row"><div class="k">Dinner</div><div class="v">Samba-jazz and MPB, with the great Italian songbook — the timeless melodies of the Dolce Vita — woven in.</div></div>
+            <div class="row"><div class="k">Late lounge</div><div class="v">Latin American classics in Spanish and jazz standards reimagined in bossa style — always within the duo’s signature sound.</div></div>
+          </div>
+        </div>
+
+        <div class="sec high">
+          <div class="eyebrow">Selected Highlights</div>
+          <div class="item">
+            <div class="quote">“One of the most refined voices of Brazilian music in Italy”</div>
+            <div class="quote-src">Gazzetta del Mezzogiorno · Culture</div>
+          </div>
+          <div class="item"><div class="hv"><strong>Toninho Horta</strong> — special guest of the Grammy-winning guitarist (2024 Italian tour) &nbsp;·&nbsp; <strong>Toquinho</strong> — joint project launched by the ANSA news agency &nbsp;·&nbsp; <strong>Ornella Vanoni</strong> — Auditorium Parco della Musica, Rome</div></div>
+          <div class="item"><div class="hv"><strong>~45 million viewers</strong> — live on Rede Globo's <em>Domingão do Faustão</em> (Brazil) &nbsp;·&nbsp; <strong>Galluzzi Prize</strong>, first woman awarded</div></div>
+        </div>
+
+        <div class="videos sec">
+          <div class="eyebrow">Watch the duo</div>
+          <span class="vlink"><span class="arrow">▶</span>&nbsp; <strong>Brazilian live set</strong> — youtube.com/watch?v=32rDNh2MM6Y</span>
+          <span class="vlink"><span class="arrow">▶</span>&nbsp; <strong>Italian songbook live</strong> — youtube.com/watch?v=iQeNbM-2mYo</span>
+          <span class="vlink"><span class="arrow">▶</span>&nbsp; <strong>Full press kit</strong> — <span class="url">www.selmahernandes.it</span></span>
+        </div>
+
+      </div>
+
+      <div class="col-r">
+        <div class="panel"><div class="inner">
+          <div class="eyebrow">Residency at a Glance</div>
+          <div class="fact"><div class="fk">Format</div><div class="fv"><strong>Acoustic duo</strong> — voice, light percussion &amp; classical guitar</div></div>
+          <div class="fact"><div class="fk">Sets</div><div class="fv">2–3 × 45 min per evening, up to 5 nights weekly</div></div>
+          <div class="fact"><div class="fk">Sound</div><div class="fv">Elegant, low-volume, conversation-friendly. House sound system required (guitar input, percussion mic, in-ear or floor monitor) — the duo travels with personal vocal microphone only</div></div>
+          <div class="fact"><div class="fk">Repertoire</div><div class="fv">Extensive, no-repeat programme — Brazilian, Italian &amp; Latin, tailored to the venue's daypart flow</div></div>
+          <div class="fact"><div class="fk">Languages</div><div class="fv">Portuguese · Italian · Spanish · English</div></div>
+          <div class="fact"><div class="fk">Engagements</div><div class="fv"><strong>1 to 6 months</strong> — seasonal or ongoing</div></div>
+          <div class="fact"><div class="fk">Available from</div><div class="fv"><strong>October 2026</strong> — incl. winter season 2026/27</div></div>
+          <div class="fact"><div class="fk">Base</div><div class="fv">Italy (EU) — worldwide availability</div></div>
+        </div></div>
+
+        <div class="sec" style="margin-top:5mm;">
+          <div class="eyebrow">Why it works for your venue</div>
+          <p class="txt" style="font-size:8.4pt;">
+            Not a cover act: a signature <strong>Brazilian evening</strong> guests remember the venue for — the presence of an ensemble, the discretion of a lobby pianist.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="f-cell">
+      <div class="f-name">SELMAH &amp; LUIGI RANA</div>
+      <div class="f-tag">Bossa Nova · Brazilian Jazz · Italian &amp; Latin Classics</div>
+    </div>
+    <div class="f-cell f-contact">
+      <strong>Production &amp; Booking</strong><br>
+      produzione@selmahernandes.it · WhatsApp +39 333 702 8704<br>
+      www.selmahernandes.it
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
