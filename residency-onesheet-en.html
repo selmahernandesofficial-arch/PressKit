@@ -15,7 +15,11 @@
 html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 body{
   font-family:'Hanken Grotesk';font-weight:300;color:var(--inchiostro);
-  background:var(--avorio);font-size:9.4pt;line-height:1.45;
+  background:var(--notte);font-size:9.4pt;line-height:1.45;
+}
+@media screen{
+  body{padding:10mm 0;}
+  .page{margin:0 auto;box-shadow:0 6px 40px rgba(0,0,0,.5);}
 }
 .page{width:210mm;height:297mm;position:relative;overflow:hidden;background:var(--avorio);}
 
