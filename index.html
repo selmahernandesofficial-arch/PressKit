@@ -9,7 +9,6 @@
 <link rel="canonical" href="https://www.selmahernandes.it/">
 <link rel="alternate" hreflang="it" href="https://www.selmahernandes.it/">
 <link rel="alternate" hreflang="pt-BR" href="https://www.selmahernandes.it/presskit-brasil.html">
-<link rel="alternate" hreflang="en" href="https://www.selmahernandes.it/presskit-en.html">
 <link rel="alternate" hreflang="x-default" href="https://www.selmahernandes.it/">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="SELMAH · Selma Hernandes">
@@ -49,7 +48,7 @@
         "https://www.youtube.com/channel/UCRVi_CdBGIvAhRcyuLfs7tw",
         "https://open.spotify.com/album/09as9QfkivbXYhBe1i0T0O"
       ],
-      "email": "selmahernandesofficial@gmail.com",
+      "email": "produzione@selmahernandes.it",
       "telephone": "+393337028704"
     },
     {
@@ -148,21 +147,27 @@
   .hero-img::after{
     content:"";position:absolute;inset:0;
     background:
-      radial-gradient(ellipse 60% 75% at 72% 30%, rgba(215,143,155,.16), transparent 65%),
+      radial-gradient(ellipse 60% 75% at 28% 30%, rgba(215,143,155,.16), transparent 65%),
       linear-gradient(180deg, rgba(21,19,27,.42) 0%, rgba(21,19,27,.18) 38%, rgba(21,19,27,.86) 78%, var(--notte) 100%),
-      linear-gradient(90deg, rgba(21,19,27,.72) 0%, transparent 55%);
+      linear-gradient(270deg, rgba(21,19,27,.72) 0%, transparent 55%);
   }
   .hero-inner{
     position:relative;z-index:2;
-    display:flex;flex-direction:column;justify-content:flex-end;
+    display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-end;
     width:100%;max-width:1100px;margin:0 auto;
     padding:64px 24px 72px;
+    text-align:right;
   }
   .hero-kicker{
     font-size:11px;letter-spacing:.4em;text-transform:uppercase;
     color:var(--su-notte-dim);font-weight:500;margin-bottom:22px;
   }
   .hero-kicker b{color:var(--rosa);font-weight:500}
+  .nome-show{
+    font-family:'Fraunces',serif;font-weight:600;font-style:italic;
+    font-size:clamp(22px,3.2vw,38px);color:var(--rosa-viva);
+    margin-top:10px;letter-spacing:.01em;
+  }
   h1.titolo{
     font-family:'Italiana',serif;font-weight:400;
     font-size:clamp(64px,11vw,148px);
@@ -173,20 +178,47 @@
     color:var(--rosa-viva);
     display:inline-block;
   }
+  h1 .rosa-cognome{color:var(--rosa-viva)}
   .hero-sub{
     margin-top:20px;max-width:560px;
     font-size:18px;color:var(--su-notte-dim);
   }
   .hero-sub strong{color:var(--su-notte);font-weight:500}
+
+  /* ---------- agenda concerti (hero) ---------- */
+  .agenda-hero{margin-top:38px;max-width:640px}
+  .agenda-eyebrow{
+    font-size:11px;letter-spacing:.34em;text-transform:uppercase;font-weight:500;
+    color:var(--oro);margin-bottom:16px;display:flex;align-items:center;gap:14px;
+  }
+  .agenda-eyebrow::after{content:"";height:1px;flex:0 0 40px;background:var(--hairline-dark)}
+  .agenda-lista{border-top:1px solid var(--hairline-dark)}
+  .agenda-riga{
+    display:flex;flex-wrap:baseline;align-items:baseline;gap:6px 20px;
+    padding:15px 0;border-bottom:1px solid var(--hairline-dark);
+  }
+  .agenda-data{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+    font-size:clamp(22px,3vw,28px);color:var(--rosa-viva);min-width:150px;line-height:1;
+  }
+  .agenda-info{font-size:15px;color:var(--su-notte);flex:1;min-width:200px}
+  .agenda-info b{color:var(--oro);font-weight:500}
+  @media (max-width:560px){
+    .agenda-riga{flex-direction:column;gap:4px;padding:14px 0}
+    .agenda-data{min-width:0}
+  }
   .scheda{
     margin-top:42px;
-    display:grid;grid-template-columns:repeat(4,auto);gap:0;
-    border-top:1px solid var(--hairline-dark);
-    border-bottom:1px solid var(--hairline-dark);
-    width:fit-content;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--hairline-dark);
+    border:1px solid var(--hairline-dark);
+    width:100%;
   }
-  .scheda div{padding:16px 36px 16px 0;margin-right:36px}
-  .scheda div+div{border-left:1px solid var(--hairline-dark);padding-left:36px}
+  .scheda div{background:var(--notte);padding:18px 28px}
+  .scheda.scheda-chiara{background:var(--hairline-light);border-color:var(--hairline-light)}
+  .scheda.scheda-chiara div{background:var(--avorio-2)}
+  .scheda.scheda-chiara dt{color:#B06672}
+  .scheda.scheda-chiara dd{color:var(--inchiostro)}
   .scheda dt{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--rosa);font-weight:500;margin-bottom:4px}
   .scheda dd{font-size:15px;color:var(--su-notte);font-weight:400}
   .cta-row{margin-top:42px;display:flex;gap:18px;flex-wrap:wrap}
@@ -347,16 +379,16 @@
   /* ---------- responsive ---------- */
   @media (max-width:860px){
     section{padding:72px 0}
-    .scheda{grid-template-columns:1fr 1fr;border:1px solid var(--hairline-dark);width:100%}
-    .scheda div{padding:14px 18px!important;margin:0!important;border-left:0!important}
-    .scheda div:nth-child(even){border-left:1px solid var(--hairline-dark)!important}
-    .scheda div:nth-child(n+3){border-top:1px solid var(--hairline-dark)}
+    .scheda{grid-template-columns:1fr 1fr}
+    .scheda div{padding:14px 18px}
     .vgrid,.concept-grid,.ens-grid,.profilo,.b-grid{grid-template-columns:1fr}
     .concept-grid,.profilo,.b-grid{gap:40px}
     .profilo.inverti .p-testo{order:1}
     .profilo.inverti .p-foto{order:2}
     .hero{min-height:78vh}
-    .hero-inner{padding-bottom:56px}
+    .hero-inner{padding-bottom:56px;align-items:flex-start;text-align:left}
+    .agenda-riga{justify-content:flex-start}
+    .cta-row{justify-content:flex-start}
   }
 </style>
 </head>
@@ -366,18 +398,35 @@
 <header class="hero">
   <div class="hero-img"><img src="foto_selmah.jpg" alt="SELMAH Hernandes, cantante brasiliana" fetchpriority="high"></div>
   <div class="hero-inner">
-    <p class="hero-kicker">SELMAH &nbsp;·&nbsp; <b>Fusion · Italian Music · Brazilian Jazz</b></p>
-    <h1 class="titolo">Samba <span class="rosa-parola">Rosa</span></h1>
-    <p class="hero-sub">Special guest: l'armonicista <strong>Giuseppe Milici</strong> · Direzione musicale di <strong>Luigi Rana</strong></p>
-    <dl class="scheda">
-      <div><dt>Durata</dt><dd>90 minuti</dd></div>
-      <div><dt>Formazione</dt><dd>Sestetto</dd></div>
-      <div><dt>Venue</dt><dd>Festival · Teatri · Piazze</dd></div>
-      <div><dt>Touring</dt><dd>Italia · Europa · Brasile</dd></div>
-    </dl>
-    <div class="cta-row">
-      <a class="btn btn-rosa" href="mailto:selmahernandesofficial@gmail.com?subject=Richiesta%20disponibilit%C3%A0%20%C2%B7%20Samba%20Rosa">Richiedi disponibilità</a>
-      <a class="btn btn-vuoto" href="#video">Guarda il video</a>
+    <p class="hero-kicker"><b>Fusion · Brazilian Jazz · World Music</b></p>
+    <h1 class="titolo">SelmaH<span class="rosa-cognome">ernandes</span></h1>
+    <p class="nome-show">Samba Rosa</p>
+    <p class="hero-sub">Direzione musicale di <strong>Luigi Rana</strong></p>
+
+    <div class="agenda-hero">
+      <p class="agenda-eyebrow">Prossimi concerti</p>
+      <div class="agenda-lista">
+        <div class="agenda-riga">
+          <span class="agenda-data">28 luglio</span>
+          <span class="agenda-info"><b>Casale Balsignano</b> · ore 21:00 · Special Guest Giuseppe Milici</span>
+        </div>
+        <div class="agenda-riga">
+          <span class="agenda-data">1 agosto</span>
+          <span class="agenda-info"><b>Collepasso (LE)</b> · Festival "I Fiori del Jazz" · Palazzo Baronale</span>
+        </div>
+        <div class="agenda-riga">
+          <span class="agenda-data">14 agosto</span>
+          <span class="agenda-info"><b>Conversano (BA)</b> · Norba Jazz Festival · Casa delle Arti · Special guest Giuseppe Milici</span>
+        </div>
+        <div class="agenda-riga">
+          <span class="agenda-data">20 agosto</span>
+          <span class="agenda-info"><b>Modena (MO)</b> · dettagli in arrivo</span>
+        </div>
+        <div class="agenda-riga">
+          <span class="agenda-data">6 settembre</span>
+          <span class="agenda-info"><b>Bitonto (BA)</b> · dettagli in arrivo</span>
+        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -391,10 +440,10 @@
     <h2>Il concerto, <span class="accento">dal vivo</span></h2>
     <div class="vgrid">
       <figure class="vcard">
-        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/32rDNh2MM6Y?rel=0&modestbranding=1" title="SELMAH — promo musica brasiliana" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/iQeNbM-2mYo?rel=0&modestbranding=1" title="SELMAH — promo musica italiana" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
       </figure>
       <figure class="vcard">
-        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/iQeNbM-2mYo?rel=0&modestbranding=1" title="SELMAH — promo musica italiana" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/32rDNh2MM6Y?rel=0&modestbranding=1" title="SELMAH — promo musica brasiliana" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
       </figure>
     </div>
   </div>
@@ -475,7 +524,7 @@
     <div class="ens-grid">
       <div class="ens-cell evid">
         <p class="ruolo">Voce &amp; Percussioni</p>
-        <p class="nome">SELMAH Hernandes</p>
+        <p class="nome">Selmah</p>
         <p>Selma Hernandes · Cantante, compositrice, interprete</p>
       </div>
       <div class="ens-cell">
@@ -494,6 +543,12 @@
         <p>Ensemble d'eccellenza al fianco di grandi nomi della musica come Tony Esposito, Antonella Ruggiero e altri.<br><b>Paolo Luiso</b> · Piano &nbsp;·&nbsp; <b>Filippo De Salvo</b> · Basso/Contrabbasso &nbsp;·&nbsp; <b>Saverio Petruzzellis</b> · Batteria</p>
       </div>
     </div>
+    <dl class="scheda scheda-chiara" style="margin-top:40px">
+      <div><dt>Durata</dt><dd>90 minuti</dd></div>
+      <div><dt>Formazione</dt><dd>Sestetto</dd></div>
+      <div><dt>Venue</dt><dd>Festival · Teatri · Piazze</dd></div>
+      <div><dt>Touring</dt><dd>Italia · Europa · Brasile</dd></div>
+    </dl>
     <div style="margin-top:36px">
       <div class="foto-cornice"><img src="selmah_sestetto.jpg" alt="Il sestetto di Samba Rosa al completo sul palco" loading="lazy"></div>
       <p class="didascalia">Il sestetto di Samba Rosa</p>
@@ -623,7 +678,7 @@
     <div class="b-grid">
       <div>
         <dl>
-          <div class="b-blocco"><dt>Email</dt><dd><a href="mailto:selmahernandesofficial@gmail.com">selmahernandesofficial@gmail.com</a></dd></div>
+          <div class="b-blocco"><dt>Email</dt><dd><a href="mailto:produzione@selmahernandes.it">produzione@selmahernandes.it</a></dd></div>
           <div class="b-blocco"><dt>Telefono Italia</dt><dd>(+39) 333 702 8704 · WhatsApp</dd></div>
           <div class="b-blocco"><dt>Telefono Brasile</dt><dd>(+55 11) 991 885 120 <span class="nota-rider">— attivo solo durante la tournée in Brasile</span></dd></div>
           <div class="b-blocco"><dt>Social</dt><dd>
@@ -639,7 +694,6 @@
             <a href="https://www.selmahernandes.it/rassegna-stampa.html">Rassegna Stampa</a> &nbsp;·&nbsp;
             <a href="https://www.selmahernandes.it/onesheet-italia.html">One Sheet</a>
           </dd></div>
-          <div class="b-blocco"><dt>Sede legale</dt><dd>Unisono Associazione Culturale e Artistica<br>Via X Marzo, 35 · 70026 Modugno (BA)<br>C.F./P.I. 07413890729</dd></div>
           <div class="b-blocco"><dt>Su richiesta</dt><dd class="nota-rider">Rider tecnico disponibile su richiesta.</dd></div>
         </dl>
       </div>
@@ -648,7 +702,7 @@
 </section>
 
 <footer>
-  <p>Samba Rosa · Fusion · Italian Music · Brazilian Jazz</p>
+  <p>Samba Rosa · Fusion · Brazilian Jazz · World Music</p>
   <p class="f-nome" style="text-transform:none;letter-spacing:.06em">SELMAH</p>
   <p>Press Kit 2026–2027 · Italia · Europa · Brasile</p>
 </footer>
