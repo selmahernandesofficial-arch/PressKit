@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>SELMAH · Samba Rosa — Concerto Musica Brasiliana e Italiana | Booking</title>
-<meta name="description" content="Samba Rosa: il live di SELMAH (Selma Hernandes) con Giuseppe Milici e la direzione di Luigi Rana. Samba, bossa nova e grande canzone italiana. Booking per festival, teatri, rassegne ed eventi in Italia ed Europa.">
+<meta name="description" content="Samba Rosa: il live di SELMAH (Selma Hernandes) con la direzione musicale di Luigi Rana, in alcune date con la partecipazione straordinaria di Giuseppe Milici. Samba, bossa nova e grande canzone italiana. Booking per festival, teatri, rassegne ed eventi in Italia ed Europa.">
 <link rel="canonical" href="https://www.selmahernandes.it/">
 <link rel="alternate" hreflang="it" href="https://www.selmahernandes.it/">
 <link rel="alternate" hreflang="pt-BR" href="https://www.selmahernandes.it/presskit-brasil.html">
@@ -13,14 +13,14 @@
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="SELMAH · Selma Hernandes">
 <meta property="og:title" content="SELMAH · Samba Rosa — Concerto di Musica Brasiliana e Italiana">
-<meta property="og:description" content="Il nuovo spettacolo di SELMAH con Giuseppe Milici (special guest) e la direzione musicale di Luigi Rana. Booking per festival, teatri ed eventi.">
+<meta property="og:description" content="Il nuovo spettacolo di SELMAH con la direzione musicale di Luigi Rana, in alcune date con la partecipazione straordinaria di Giuseppe Milici. Booking per festival, teatri ed eventi.">
 <meta property="og:url" content="https://www.selmahernandes.it/">
 <meta property="og:image" content="https://www.selmahernandes.it/foto_selmah.jpg">
 <meta property="og:locale" content="it_IT">
 <meta property="og:locale:alternate" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SELMAH · Samba Rosa — Musica Brasiliana e Italiana Live">
-<meta name="twitter:description" content="Samba, bossa nova e canzone italiana. Con Giuseppe Milici. Booking festival e teatri.">
+<meta name="twitter:description" content="Samba, bossa nova e canzone italiana. Direzione musicale di Luigi Rana. Booking festival e teatri.">
 <meta name="twitter:image" content="https://www.selmahernandes.it/foto_selmah.jpg">
 <script type="application/ld+json">
 {
@@ -31,7 +31,7 @@
       "@id": "https://www.selmahernandes.it/#selmah",
       "name": "SELMAH",
       "alternateName": "Selma Hernandes",
-      "description": "Interprete e compositrice brasiliana attiva in Italia. Il progetto Samba Rosa unisce la grande canzone italiana a samba e bossa nova, con Giuseppe Milici e la direzione musicale di Luigi Rana.",
+      "description": "Interprete e compositrice brasiliana attiva in Italia. Il progetto Samba Rosa unisce la grande canzone italiana a samba e bossa nova, con la direzione musicale di Luigi Rana; in alcune date, la partecipazione straordinaria dell'armonicista Giuseppe Milici.",
       "genre": ["Bossa Nova", "Samba", "MPB", "Brazilian Jazz", "Musica italiana"],
       "image": "https://www.selmahernandes.it/foto_selmah.jpg",
       "url": "https://www.selmahernandes.it/",
@@ -178,7 +178,6 @@
     color:var(--rosa-viva);
     display:inline-block;
   }
-  h1 .rosa-cognome{color:var(--rosa-viva)}
   .hero-sub{
     margin-top:20px;max-width:560px;
     font-size:18px;color:var(--su-notte-dim);
@@ -212,15 +211,14 @@
     display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
     background:var(--hairline-dark);
     border:1px solid var(--hairline-dark);
-    width:100%;
   }
-  .scheda div{background:var(--notte);padding:18px 28px}
+  .scheda div{background:var(--notte);padding:20px 28px;margin:0}
   .scheda.scheda-chiara{background:var(--hairline-light);border-color:var(--hairline-light)}
-  .scheda.scheda-chiara div{background:var(--avorio-2)}
-  .scheda.scheda-chiara dt{color:#B06672}
-  .scheda.scheda-chiara dd{color:var(--inchiostro)}
+  .scheda.scheda-chiara div{background:var(--avorio)}
   .scheda dt{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--rosa);font-weight:500;margin-bottom:4px}
   .scheda dd{font-size:15px;color:var(--su-notte);font-weight:400}
+  .scheda.scheda-chiara dt{color:#B06672}
+  .scheda.scheda-chiara dd{color:var(--inchiostro)}
   .cta-row{margin-top:42px;display:flex;gap:18px;flex-wrap:wrap}
   .btn{
     display:inline-block;padding:15px 34px;
@@ -253,6 +251,10 @@
   .frame{position:relative;padding-top:56.25%;background:var(--notte-2)}
   .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
+  /* ---------- banner pulito (concept) ---------- */
+  .fascia-pulita{position:relative;overflow:hidden}
+  .fascia-pulita img{width:100%;height:60vh;min-height:340px;object-fit:cover;object-position:center 35%}
+
   /* ---------- concept ---------- */
   .concept-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start;margin-top:8px}
   .concept-testo p{margin-bottom:1.2em;font-size:17.5px;color:var(--inchiostro-mid)}
@@ -274,6 +276,14 @@
     border:1px solid rgba(176,102,114,.4);pointer-events:none;
   }
   .didascalia{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--grigio);margin-top:14px;font-weight:500}
+
+  /* ---------- special guest (testo + foto contenuta) ---------- */
+  .special-grid{display:grid;grid-template-columns:1fr 220px;gap:44px;align-items:start}
+  .special-foto .foto-cornice img{width:100%;height:auto}
+  @media (max-width:860px){
+    .special-grid{grid-template-columns:1fr}
+    .special-foto{max-width:220px}
+  }
 
   /* ---------- ensemble ---------- */
   .ens-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hairline-light);border:1px solid var(--hairline-light);margin-top:48px}
@@ -380,7 +390,6 @@
   @media (max-width:860px){
     section{padding:72px 0}
     .scheda{grid-template-columns:1fr 1fr}
-    .scheda div{padding:14px 18px}
     .vgrid,.concept-grid,.ens-grid,.profilo,.b-grid{grid-template-columns:1fr}
     .concept-grid,.profilo,.b-grid{gap:40px}
     .profilo.inverti .p-testo{order:1}
@@ -399,7 +408,7 @@
   <div class="hero-img"><img src="foto_selmah.jpg" alt="SELMAH Hernandes, cantante brasiliana" fetchpriority="high"></div>
   <div class="hero-inner">
     <p class="hero-kicker"><b>Fusion · Brazilian Jazz · World Music</b></p>
-    <h1 class="titolo">SelmaH<span class="rosa-cognome">ernandes</span></h1>
+    <h1 class="titolo">Selma <span class="rosa-parola">Hernandes</span></h1>
     <p class="nome-show">Samba Rosa</p>
     <p class="hero-sub">Direzione musicale di <strong>Luigi Rana</strong></p>
 
@@ -449,6 +458,11 @@
   </div>
 </section>
 
+<!-- ============ BANNER LIVE ============ -->
+<div class="fascia-pulita">
+  <img src="Foto_Selma_Live_banner.png" alt="SELMAH dal vivo sul palco" loading="lazy">
+</div>
+
 <!-- ============ CONCEPT ============ -->
 <section class="chiaro">
   <div class="wrap">
@@ -456,16 +470,71 @@
     <h2>Brasile &amp; Italia, <span class="accento" style="color:#B06672">oltre i confini</span></h2>
     <div class="concept-grid">
       <div class="concept-testo">
-        <p class="capolettera">Una rara complicità musicale guidata dal magnetismo della cantante di origine brasiliana <strong>SELMAH</strong> e dal soffio virtuoso dell'armonicista italiano <strong>Giuseppe Milici</strong>, sotto la direzione musicale del produttore e arrangiatore italiano, già premiato con disco multiplatino in Europa e Asia, <strong>Luigi Rana</strong>.</p>
+        <p class="capolettera">Un incontro musicale guidato dal magnetismo della cantante di origine brasiliana <strong>SELMAH</strong>, sotto la direzione musicale del produttore e arrangiatore italiano, già premiato con disco multiplatino in Europa e Asia, <strong>Luigi Rana</strong>. In alcune date, il progetto accoglie la partecipazione straordinaria dell'armonicista italiano <strong>Giuseppe Milici</strong>.</p>
         <p>Il progetto svela un'Italia solare, ritmica e profondamente connessa al cuore del Brasile. SELMAH porta sul palco un pezzo importante della storia musicale delle due nazioni, accostando le armonie brasiliane alla grande scuola musicale italiana: da Jimmy Fontana a Jobim, da Domenico Modugno a Ivan Lins e João Bosco, fino a Ornella Vanoni, grande dama della musica italiana.</p>
         <p class="cit-album">Per celebrare i cinquant'anni dell'album «La voglia e la pazzia, l'incoscienza e l'allegria», inciso con Toquinho e Vinicius — opera-simbolo della più bella collaborazione musicale tra Italia e Brasile.</p>
         <p>Uno spettacolo che va oltre la musica, fra aneddoti, storie e momenti di rara naturalezza.</p>
       </div>
       <div>
-        <div class="foto-cornice"><img src="Foto_Selma_Live_banner.png" alt="SELMAH dal vivo sul palco" loading="lazy"></div>
-        <p class="didascalia">SELMAH · Live</p>
-        <div class="foto-cornice" style="margin-top:28px"><img src="selmah_milici.jpg" alt="SELMAH e Giuseppe Milici, voce e armonica faccia a faccia" loading="lazy"></div>
-        <p class="didascalia">SELMAH &amp; Giuseppe Milici · Samba Rosa</p>
+        <div class="foto-cornice"><img src="Selmah%20e%20Luigi%20Rana%20in%20concert.png" alt="SELMAH e Luigi Rana in concerto" loading="lazy"></div>
+        <p class="didascalia">SELMAH &amp; Luigi Rana · Samba Rosa</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENSEMBLE ============ -->
+<section class="chiaro" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Ensemble</p>
+    <h2>Il <span class="accento" style="color:#B06672">sestetto</span></h2>
+    <div class="ens-grid">
+      <div class="ens-cell evid">
+        <p class="ruolo">Voce &amp; Percussioni</p>
+        <p class="nome">Selmah</p>
+        <p>Selma Hernandes · Cantante, compositrice, interprete</p>
+      </div>
+      <div class="ens-cell">
+        <p class="ruolo">Armonica · Special Guest</p>
+        <p class="nome">Giuseppe Milici</p>
+        <p>Blue Note NY · Tokyo · Milano · Toots Thielemans · KLM · 20+ paesi</p>
+      </div>
+      <div class="ens-cell">
+        <p class="ruolo">Chitarra &amp; Direzione Musicale</p>
+        <p class="nome">Luigi Rana</p>
+        <p>Miglior Arrangiatore Sanremo 2004 per l'artista Mario Rosini · Sanremo 2002 (Warner) · Colonne sonore Disney · 3,3 miliardi di stream</p>
+      </div>
+      <div class="ens-cell">
+        <p class="ruolo">Piano · Basso/Contrabbasso · Batteria</p>
+        <p class="nome">Trio Unisono</p>
+        <p>Trio Unisono<br><b>Paolo Luiso</b> (pianoforte), <b>Filippo De Salvo</b> (basso/contrabbasso) e <b>Saverio Petruzzellis</b> (batteria) sono le anime del Trio Unisono, un ensemble caratterizzato da un groove trascinante e da un affiatamento straordinario. Una sinergia che ha portato la formazione a diventare il nucleo ritmico ed espressivo di riferimento per artisti del calibro di Antonella Ruggiero, Neja, Tony Esposito, Sergio Muñiz, Giuseppe Milici, muovendosi con naturalezza tra generi e palcoscenici diversi.</p>
+      </div>
+    </div>
+    <dl class="scheda scheda-chiara" style="margin-top:40px">
+      <div><dt>Durata</dt><dd>80 minuti</dd></div>
+      <div><dt>Formazione</dt><dd>Sestetto</dd></div>
+      <div><dt>Venue</dt><dd>Festival · Teatri · Piazze</dd></div>
+      <div><dt>Touring</dt><dd>Italia · Europa · Brasile</dd></div>
+    </dl>
+    <div style="margin-top:36px">
+      <div class="foto-cornice"><img src="selmah_sestetto.jpg" alt="Il sestetto di Samba Rosa al completo sul palco" loading="lazy"></div>
+      <p class="didascalia">Il sestetto di Samba Rosa</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECIAL GUEST ============ -->
+<section class="chiaro" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Formazione con special guest</p>
+    <h2 style="font-size:clamp(30px,4.4vw,46px)">Special guest <span class="accento" style="color:#B06672">Giuseppe Milici</span></h2>
+    <div class="special-grid">
+      <div>
+        <p class="lead">In alcune date il palco accoglie anche il soffio virtuoso dell'armonicista italiano Giuseppe Milici, tra i più raffinati interpreti dell'armonica cromatica a livello internazionale.</p>
+        <p class="lead" style="margin-top:12px;font-style:italic">Presenza da confermare data per data, in base a disponibilità.</p>
+      </div>
+      <div class="special-foto">
+        <div class="foto-cornice"><img src="Foto_Milici.jpg" alt="Giuseppe Milici all'armonica cromatica sul palco" loading="lazy"></div>
       </div>
     </div>
     <div class="strip-titolo">
@@ -516,46 +585,6 @@
   </div>
 </section>
 
-<!-- ============ ENSEMBLE ============ -->
-<section class="chiaro">
-  <div class="wrap">
-    <p class="eyebrow">Ensemble</p>
-    <h2>Il <span class="accento" style="color:#B06672">sestetto</span></h2>
-    <div class="ens-grid">
-      <div class="ens-cell evid">
-        <p class="ruolo">Voce &amp; Percussioni</p>
-        <p class="nome">Selmah</p>
-        <p>Selma Hernandes · Cantante, compositrice, interprete</p>
-      </div>
-      <div class="ens-cell">
-        <p class="ruolo">Armonica · Special Guest</p>
-        <p class="nome">Giuseppe Milici</p>
-        <p>Blue Note NY · Tokyo · Milano · Toots Thielemans · KLM · 20+ paesi</p>
-      </div>
-      <div class="ens-cell">
-        <p class="ruolo">Chitarra &amp; Direzione Musicale</p>
-        <p class="nome">Luigi Rana</p>
-        <p>Miglior Arrangiatore Sanremo 2004 per l'artista Mario Rosini · Sanremo 2002 (Warner) · Colonne sonore Disney · 3,3 miliardi di stream</p>
-      </div>
-      <div class="ens-cell">
-        <p class="ruolo">Piano · Basso/Contrabbasso · Batteria</p>
-        <p class="nome">Trio Unisono</p>
-        <p>Ensemble d'eccellenza al fianco di grandi nomi della musica come Tony Esposito, Antonella Ruggiero e altri.<br><b>Paolo Luiso</b> · Piano &nbsp;·&nbsp; <b>Filippo De Salvo</b> · Basso/Contrabbasso &nbsp;·&nbsp; <b>Saverio Petruzzellis</b> · Batteria</p>
-      </div>
-    </div>
-    <dl class="scheda scheda-chiara" style="margin-top:40px">
-      <div><dt>Durata</dt><dd>90 minuti</dd></div>
-      <div><dt>Formazione</dt><dd>Sestetto</dd></div>
-      <div><dt>Venue</dt><dd>Festival · Teatri · Piazze</dd></div>
-      <div><dt>Touring</dt><dd>Italia · Europa · Brasile</dd></div>
-    </dl>
-    <div style="margin-top:36px">
-      <div class="foto-cornice"><img src="selmah_sestetto.jpg" alt="Il sestetto di Samba Rosa al completo sul palco" loading="lazy"></div>
-      <p class="didascalia">Il sestetto di Samba Rosa</p>
-    </div>
-  </div>
-</section>
-
 <!-- ============ PROFILO SELMAH ============ -->
 <section class="chiaro" style="padding-top:0">
   <div class="wrap">
@@ -593,7 +622,7 @@
         <a class="link-esterno" href="https://www.giuseppemilici.com/it_IT/" rel="noopener">giuseppemilici.com</a>
       </div>
       <div class="p-foto">
-        <div class="foto-cornice" style="--c:var(--rosa)"><img src="Foto_Milici.jpg" alt="SELMAH e Giuseppe Milici dal vivo" loading="lazy"></div>
+        <div class="foto-cornice" style="--c:var(--rosa)"><img src="selmah_milici.jpg" alt="SELMAH e Giuseppe Milici, voce e armonica faccia a faccia" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -702,7 +731,7 @@
 </section>
 
 <footer>
-  <p>Samba Rosa · Fusion · Brazilian Jazz · World Music</p>
+  <p>Fusion · Brazilian Jazz · World Music</p>
   <p class="f-nome" style="text-transform:none;letter-spacing:.06em">SELMAH</p>
   <p>Press Kit 2026–2027 · Italia · Europa · Brasile</p>
 </footer>
