@@ -277,14 +277,6 @@
   }
   .didascalia{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--grigio);margin-top:14px;font-weight:500}
 
-  /* ---------- special guest (testo + foto contenuta) ---------- */
-  .special-grid{display:grid;grid-template-columns:1fr 220px;gap:44px;align-items:start}
-  .special-foto .foto-cornice img{width:100%;height:auto}
-  @media (max-width:860px){
-    .special-grid{grid-template-columns:1fr}
-    .special-foto{max-width:220px}
-  }
-
   /* ---------- ensemble ---------- */
   .ens-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hairline-light);border:1px solid var(--hairline-light);margin-top:48px}
   .ens-cell{background:var(--avorio);padding:36px 32px}
@@ -295,9 +287,13 @@
   .ens-cell p b{font-weight:600;color:var(--inchiostro)}
 
   /* ---------- profili ---------- */
-  .profilo{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .profilo{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:stretch}
   .profilo.inverti .p-testo{order:2}
   .profilo.inverti .p-foto{order:1}
+  .p-testo{display:flex;flex-direction:column;justify-content:center}
+  .p-foto{display:flex;flex-direction:column}
+  .p-foto .foto-cornice{flex:1 1 auto;min-height:420px;position:relative;overflow:hidden}
+  .p-foto .foto-cornice img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%}
   .p-testo p{margin-bottom:1.1em;color:var(--inchiostro-mid)}
   .p-testo p strong{color:var(--inchiostro);font-weight:500}
   .scuro .p-testo p{color:var(--su-notte-dim)}
@@ -417,15 +413,15 @@
       <div class="agenda-lista">
         <div class="agenda-riga">
           <span class="agenda-data">28 luglio</span>
-          <span class="agenda-info"><b>Casale Balsignano</b> · ore 21:00 · Special Guest Giuseppe Milici</span>
+          <span class="agenda-info"><b>Casale Balsignano</b> · ore 21:00 · Special Guest Giuseppe Milici · <b>Ingresso libero</b></span>
         </div>
         <div class="agenda-riga">
           <span class="agenda-data">1 agosto</span>
-          <span class="agenda-info"><b>Collepasso (LE)</b> · Festival "I Fiori del Jazz" · Palazzo Baronale</span>
+          <span class="agenda-info"><b>Collepasso (LE)</b> · Festival "I Fiori del Jazz" · Palazzo Baronale · <b>Ingresso libero</b></span>
         </div>
         <div class="agenda-riga">
           <span class="agenda-data">14 agosto</span>
-          <span class="agenda-info"><b>Conversano (BA)</b> · Norba Jazz Festival · Casa delle Arti · Special guest Giuseppe Milici</span>
+          <span class="agenda-info"><b>Conversano (BA)</b> · Nel Gioco del Jazz · Casa delle Arti Arena · Special guest Giuseppe Milici · <b>15 €</b> · <a href="https://www.liveticket.it/evento.aspx?Id=675044" rel="noopener" style="color:var(--rosa-viva);border-bottom:1px solid var(--rosa-viva);text-decoration:none">Biglietti →</a></span>
         </div>
         <div class="agenda-riga">
           <span class="agenda-data">20 agosto</span>
@@ -487,17 +483,12 @@
 <section class="chiaro" style="padding-top:0">
   <div class="wrap">
     <p class="eyebrow">Ensemble</p>
-    <h2>Il <span class="accento" style="color:#B06672">sestetto</span></h2>
+    <h2>Il <span class="accento" style="color:#B06672">quintetto</span></h2>
     <div class="ens-grid">
       <div class="ens-cell evid">
         <p class="ruolo">Voce &amp; Percussioni</p>
         <p class="nome">Selmah</p>
         <p>Selma Hernandes · Cantante, compositrice, interprete</p>
-      </div>
-      <div class="ens-cell">
-        <p class="ruolo">Armonica · Special Guest</p>
-        <p class="nome">Giuseppe Milici</p>
-        <p>Blue Note NY · Tokyo · Milano · Toots Thielemans · KLM · 20+ paesi</p>
       </div>
       <div class="ens-cell">
         <p class="ruolo">Chitarra &amp; Direzione Musicale</p>
@@ -509,16 +500,21 @@
         <p class="nome">Trio Unisono</p>
         <p>Trio Unisono<br><b>Paolo Luiso</b> (pianoforte), <b>Filippo De Salvo</b> (basso/contrabbasso) e <b>Saverio Petruzzellis</b> (batteria) sono le anime del Trio Unisono, un ensemble caratterizzato da un groove trascinante e da un affiatamento straordinario. Una sinergia che ha portato la formazione a diventare il nucleo ritmico ed espressivo di riferimento per artisti del calibro di Antonella Ruggiero, Neja, Tony Esposito, Sergio Muñiz, Giuseppe Milici, muovendosi con naturalezza tra generi e palcoscenici diversi.</p>
       </div>
+      <div class="ens-cell">
+        <p class="ruolo">Armonica · Special Guest</p>
+        <p class="nome">Giuseppe Milici</p>
+        <p>Tra i più raffinati interpreti dell'armonica cromatica a livello internazionale.</p>
+      </div>
     </div>
     <dl class="scheda scheda-chiara" style="margin-top:40px">
       <div><dt>Durata</dt><dd>80 minuti</dd></div>
-      <div><dt>Formazione</dt><dd>Sestetto</dd></div>
+      <div><dt>Formazione</dt><dd>Quintetto (sestetto con special guest, su richiesta e in base a disponibilità)</dd></div>
       <div><dt>Venue</dt><dd>Festival · Teatri · Piazze</dd></div>
       <div><dt>Touring</dt><dd>Italia · Europa · Brasile</dd></div>
     </dl>
     <div style="margin-top:36px">
-      <div class="foto-cornice"><img src="selmah_sestetto.jpg" alt="Il sestetto di Samba Rosa al completo sul palco" loading="lazy"></div>
-      <p class="didascalia">Il sestetto di Samba Rosa</p>
+      <div class="foto-cornice"><img src="selmah_sestetto.jpg" alt="La formazione di Samba Rosa al completo, con lo special guest, sul palco" loading="lazy"></div>
+      <p class="didascalia">La formazione al completo · con special guest</p>
     </div>
   </div>
 </section>
@@ -526,22 +522,27 @@
 <!-- ============ SPECIAL GUEST ============ -->
 <section class="chiaro" style="padding-top:0">
   <div class="wrap">
-    <p class="eyebrow">Formazione con special guest</p>
-    <h2 style="font-size:clamp(30px,4.4vw,46px)">Special guest <span class="accento" style="color:#B06672">Giuseppe Milici</span></h2>
-    <div class="special-grid">
-      <div>
-        <p class="lead">In alcune date il palco accoglie anche il soffio virtuoso dell'armonicista italiano Giuseppe Milici, tra i più raffinati interpreti dell'armonica cromatica a livello internazionale.</p>
-        <p class="lead" style="margin-top:12px;font-style:italic">Presenza da confermare data per data, in base a disponibilità.</p>
+    <p class="eyebrow">Special guest · Profilo artistico</p>
+    <h2>Giuseppe <span class="accento" style="color:#B06672">Milici</span></h2>
+    <div class="profilo" style="margin-top:32px">
+      <div class="p-testo">
+        <p><strong>Giuseppe Milici</strong> è tra i più raffinati interpreti dell'armonica cromatica a livello internazionale. Ha collaborato con Toots Thielemans, Gino Paoli, Fabrizio Bosso, Philip Catherine e Sarah Jane Morris, ed è salito sui palchi del Blue Note di New York, Tokyo e Milano e in teatri e festival in oltre 20 paesi. Dal 2015 la sua musica accompagna i voli intercontinentali della compagnia aerea KLM.</p>
+        <p>Quando la sua presenza si aggiunge alla formazione, il concerto acquista un colore ulteriore: la voce di SELMAH dialoga con il fiato dell'armonica in un intreccio che amplifica la componente jazzistica del progetto, senza intaccarne l'anima brasiliana e italiana.</p>
+        <a class="link-esterno" href="https://www.giuseppemilici.com/it_IT/" rel="noopener">giuseppemilici.com</a>
       </div>
-      <div class="special-foto">
-        <div class="foto-cornice"><img src="Foto_Milici.jpg" alt="Giuseppe Milici all'armonica cromatica sul palco" loading="lazy"></div>
+      <div class="p-foto">
+        <div class="foto-cornice"><img src="selmah_milici.jpg" alt="SELMAH e Giuseppe Milici, voce e armonica sul palco" loading="lazy"></div>
       </div>
     </div>
-    <div class="strip-titolo">
-      <p class="eyebrow">Le radici di Samba Rosa</p>
-      <h2 style="font-size:clamp(30px,4.4vw,46px)">Sul palco con <span class="accento" style="color:#B06672">i protagonisti</span></h2>
-    </div>
-    <div class="strip">
+  </div>
+</section>
+
+<!-- ============ LE RADICI / PROTAGONISTI ============ -->
+<section class="chiaro" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Le radici di Samba Rosa</p>
+    <h2 style="font-size:clamp(30px,4.4vw,46px)">Sul palco con <span class="accento" style="color:#B06672">i protagonisti</span></h2>
+    <div class="strip" style="margin-top:36px">
       <figure>
         <div class="foto-cornice"><img src="selmah_vanoni_fonseca.jpg" alt="SELMAH sul palco con Ornella Vanoni e Celso Fonseca" loading="lazy"></div>
         <p class="didascalia">Con Ornella Vanoni e Celso Fonseca</p>
@@ -610,26 +611,8 @@
 
 <hr class="filo">
 
-<!-- ============ MILICI ============ -->
-<section class="scuro">
-  <div class="wrap">
-    <p class="eyebrow">Special guest · Profilo artistico</p>
-    <div class="profilo" style="margin-top:8px">
-      <div class="p-testo">
-        <h2>Giuseppe <span class="accento">Milici</span></h2>
-        <p>Considerato tra i più raffinati interpreti dell'armonica cromatica, <strong>Giuseppe Milici</strong> ha collaborato con Toots Thielemans, Gino Paoli, Fabrizio Bosso, Philip Catherine, Sarah Jane Morris e molti altri, oltre ad essersi presentato al Blue Note di New York, Tokyo e Milano, e in teatri e festival in oltre 20 paesi. Dal 2015 la sua musica accompagna i voli intercontinentali KLM.</p>
-        <p><strong>La sua presenza in Samba Rosa non è un'aggiunta</strong> — è una delle ragioni per cui questo concerto suona diverso da qualsiasi altra proposta di musica brasiliana sul mercato.</p>
-        <a class="link-esterno" href="https://www.giuseppemilici.com/it_IT/" rel="noopener">giuseppemilici.com</a>
-      </div>
-      <div class="p-foto">
-        <div class="foto-cornice" style="--c:var(--rosa)"><img src="selmah_milici.jpg" alt="SELMAH e Giuseppe Milici, voce e armonica faccia a faccia" loading="lazy"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ RANA ============ -->
-<section class="scuro" style="padding-top:0">
+<section class="scuro">
   <div class="wrap">
     <p class="eyebrow">Direzione musicale · Profilo artistico</p>
     <div class="profilo inverti" style="margin-top:8px">
