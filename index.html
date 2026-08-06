@@ -301,6 +301,10 @@
   .p-foto{display:flex;flex-direction:column}
   .p-foto .foto-cornice{flex:1 1 auto;min-height:420px;position:relative;overflow:hidden}
   .p-foto .foto-cornice img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%}
+  /* variante "intera": riquadro adattato alla foto, nessun taglio laterale (es. Selma+Milici ai bordi) */
+  .p-foto.p-foto--intera{justify-content:center}
+  .p-foto.p-foto--intera .foto-cornice{flex:0 0 auto;min-height:0;overflow:visible}
+  .p-foto.p-foto--intera .foto-cornice img{position:static;width:100%;height:auto;object-fit:contain;object-position:center}
   .p-testo p{margin-bottom:1.1em;color:var(--inchiostro-mid)}
   .p-testo p strong{color:var(--inchiostro);font-weight:500}
   .scuro .p-testo p{color:var(--su-notte-dim)}
@@ -401,6 +405,9 @@
     .hero-inner{padding-bottom:56px;align-items:flex-start;text-align:left}
     .agenda-riga{justify-content:flex-start}
     .cta-row{justify-content:flex-start}
+    /* foto profilo: su mobile mostra l'immagine intera (no taglio laterale) */
+    .p-foto .foto-cornice{min-height:0}
+    .p-foto .foto-cornice img{position:static;width:100%;height:auto;object-fit:contain;object-position:center}
   }
 </style>
 </head>
@@ -554,7 +561,7 @@
         <p>Quando la sua presenza si aggiunge alla formazione, il concerto acquista un colore ulteriore: la voce di SELMAH dialoga con il fiato dell'armonica in un intreccio che amplifica la componente jazzistica del progetto, senza intaccarne l'anima brasiliana e italiana.</p>
         <a class="link-esterno" href="https://www.giuseppemilici.com/it_IT/" rel="noopener">giuseppemilici.com</a>
       </div>
-      <div class="p-foto">
+      <div class="p-foto p-foto--intera">
         <div class="foto-cornice"><img src="selmah_milici.jpg" alt="SELMAH e Giuseppe Milici, voce e armonica sul palco" loading="lazy"></div>
       </div>
     </div>
